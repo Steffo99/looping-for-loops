@@ -60,8 +60,4 @@ func _physics_process(delta):
 	if Input.is_action_pressed("plr_right"):
 		movement += Vector2.RIGHT * move_speed
 	
-	player_move(movement)
-
-
-func player_move(movement):
-	move_and_slide(movement, up_normal())
+	move_and_slide(movement, up_normal)
