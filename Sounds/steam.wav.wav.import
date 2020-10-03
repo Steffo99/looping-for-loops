@@ -2,11 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-valid=false
+path="res://.import/steam.wav.wav-8fc9dba0ba96e18dc9aa5d6e87a35b91.sample"
 
 [deps]
 
 source_file="res://Sounds/steam.wav.wav"
+dest_files=[ "res://.import/steam.wav.wav-8fc9dba0ba96e18dc9aa5d6e87a35b91.sample" ]
+
 [params]
 
 force/8_bit=false
