@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Conductor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ConveyorBelt.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Obstacles/ScrollingBlock.tscn" type="PackedScene" id=4]
 
 [node name="Main" type="Node2D"]
 
@@ -11,6 +12,7 @@ song_offset = 200000.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 622.258, 379.938 )
+jump_buffer_msec = 80.0
 
 [node name="ConveyorBelt" parent="." instance=ExtResource( 3 )]
 position = Vector2( 640, 700 )
@@ -19,3 +21,33 @@ conveyor_speed = 100.0
 [node name="ConveyorBelt2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 640, 20 )
 conveyor_speed = -100.0
+
+[node name="ScrollingBlock" parent="." instance=ExtResource( 4 )]
+position = Vector2( 980, 660 )
+collision_mask = 2147483650
+scroll_velocity = Vector2( -100, 0 )
+
+[node name="ScrollingBlock3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 980, 620 )
+collision_mask = 2147483650
+scroll_velocity = Vector2( -100, 0 )
+
+[node name="ScrollingBlock4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1020, 620 )
+collision_mask = 2147483650
+scroll_velocity = Vector2( -100, 0 )
+
+[node name="ScrollingBlock6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1020, 580 )
+collision_mask = 2147483650
+scroll_velocity = Vector2( -100, 0 )
+
+[node name="ScrollingBlock5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1020, 660 )
+collision_mask = 2147483650
+scroll_velocity = Vector2( -100, 0 )
+
+[node name="ScrollingBlock2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 940, 660 )
+collision_mask = 2147483650
+scroll_velocity = Vector2( -100, 0 )

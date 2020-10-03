@@ -15,9 +15,11 @@ var jump_buffer: int = 0
 var is_quick_falling: bool = false
 var quick_fall_buffer: int = 0
 
+func up_normal():
+	return -gravity.normalized()
 
 func _physics_process(delta):
-	var up_normal = -gravity.normalized()
+	var up_normal = up_normal()
 	var floor_normal = get_floor_normal()
 	
 	if is_on_floor():
@@ -58,4 +60,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("plr_right"):
 		movement += Vector2.RIGHT * move_speed
 	
-	move_and_slide(movement, up_normal)
+	player_move(movement)
+
+
+func player_move(movement):
+	move_and_slide(movement, up_normal())
