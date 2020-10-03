@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="ld47"
 run/main_scene="res://Scenes/Main.tscn"
 
+[display]
+
+window/size/height=576
+
 [layer_names]
 
 2d_render/layer_1="Default"
