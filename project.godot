@@ -8,14 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Conductor",
+"language": "GDScript",
+"path": "res://Scripts/Conductor.gd"
+} ]
 _global_script_class_icons={
-
+"Conductor": ""
 }
 
 [application]
 
 config/name="ld47"
+run/main_scene="res://Main.tscn"
 
 [rendering]
 
