@@ -13,9 +13,27 @@ _global_script_classes=[ {
 "class": "Conductor",
 "language": "GDScript",
 "path": "res://Scripts/Conductor.gd"
+}, {
+"base": "StaticBody2D",
+"class": "ConveyorBelt",
+"language": "GDScript",
+"path": "res://Scripts/ConveyorBelt.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "ExtendedKinematicBody2D",
+"language": "GDScript",
+"path": "res://Scripts/ExtendedKinematicBody2D.gd"
+}, {
+"base": "ExtendedKinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Scripts/Player.gd"
 } ]
 _global_script_class_icons={
-"Conductor": ""
+"Conductor": "",
+"ConveyorBelt": "",
+"ExtendedKinematicBody2D": "",
+"Player": ""
 }
 
 [application]
@@ -25,13 +43,42 @@ run/main_scene="res://Scenes/Main.tscn"
 
 [display]
 
-window/size/height=576
+window/size/width=1280
+window/size/height=720
+
+[input]
+
+plr_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+plr_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+plr_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+plr_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
 2d_render/layer_1="Default"
 2d_physics/layer_1="Default"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="ConveyorBelt"
 
 [rendering]
 

@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Conductor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ConveyorBelt.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node2D"]
 
 [node name="Conductor" parent="." instance=ExtResource( 2 )]
 song_offset = 200000.0
 
+[node name="ConveyorBelt" parent="." instance=ExtResource( 3 )]
+position = Vector2( 662.439, 610.32 )
+conveyor_speed = 100.0
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 293.919, 200.506 )
+position = Vector2( 918.923, 436.874 )
