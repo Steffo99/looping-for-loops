@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/wobble_03.wav-6d1aa5279695c170ac3449512cf6f70f.sample"
+
+[deps]
+
+source_file="res://Sounds/wobble_03.wav"
+dest_files=[ "res://.import/wobble_03.wav-6d1aa5279695c170ac3449512cf6f70f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

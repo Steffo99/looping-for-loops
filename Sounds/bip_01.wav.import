@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/wobble_03.wav.wav-aac3363fadfec09e78cc2e72ef87d366.sample"
+path="res://.import/bip_01.wav-825e7a485f2f99df3bde76ce3db7888d.sample"
 
 [deps]
 
-source_file="res://Sounds/wobble_03.wav.wav"
-dest_files=[ "res://.import/wobble_03.wav.wav-aac3363fadfec09e78cc2e72ef87d366.sample" ]
+source_file="res://Sounds/bip_01.wav"
+dest_files=[ "res://.import/bip_01.wav-825e7a485f2f99df3bde76ce3db7888d.sample" ]
 
 [params]
 

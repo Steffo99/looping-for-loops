@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/bip_07.wav.wav-d6eab40bbc9ea551dfb3e159f101188d.sample"
+path="res://.import/bip_06.wav-91a0ad2cdcd04c515b02c0e54db9afe5.sample"
 
 [deps]
 
-source_file="res://Sounds/bip_07.wav.wav"
-dest_files=[ "res://.import/bip_07.wav.wav-d6eab40bbc9ea551dfb3e159f101188d.sample" ]
+source_file="res://Sounds/bip_06.wav"
+dest_files=[ "res://.import/bip_06.wav-91a0ad2cdcd04c515b02c0e54db9afe5.sample" ]
 
 [params]
 

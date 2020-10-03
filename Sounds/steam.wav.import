@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/random_03.wav.wav-344b2212085bed25eb08c90d82f41479.sample"
+path="res://.import/steam.wav-54f3d031f12f027b59aac2cf17b7c7e6.sample"
 
 [deps]
 
-source_file="res://Sounds/random_03.wav.wav"
-dest_files=[ "res://.import/random_03.wav.wav-344b2212085bed25eb08c90d82f41479.sample" ]
+source_file="res://Sounds/steam.wav"
+dest_files=[ "res://.import/steam.wav-54f3d031f12f027b59aac2cf17b7c7e6.sample" ]
 
 [params]
 
