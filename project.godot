@@ -21,7 +21,13 @@ _global_script_class_icons={
 [application]
 
 config/name="ld47"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Scenes/Main.tscn"
+
+[layer_names]
+
+2d_render/layer_1="Default"
+2d_physics/layer_1="Default"
+2d_physics/layer_2="Player"
 
 [rendering]
 
