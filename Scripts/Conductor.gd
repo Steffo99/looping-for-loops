@@ -11,16 +11,23 @@ export(float, 0, 1000000) var song_offset: float = 0
 # The time the song started playing at
 var start_time: int
 
-# The time of the last beat
-var last_beat: int
-
-# A song beat
+# Song beats signals
+signal quarter_beat
+signal half_beat
 signal beat
+signal four_beats
+signal two_beats
+
+# The time of the last quarter_beat
+var last_qb: int
+
+# The count of quarter_beats so far
+var count_qb: int = 0
 
 
 # Calculate the microseconds per beat
-func usec_per_beat():
-	return 60000000 / song_bpm
+func usec_per_quarter_beat():
+	return 60000000 / (song_bpm * 4)
 
 
 # Returns microseconds since the song start
@@ -37,12 +44,8 @@ func corrected_time():
 # Start playing the song
 func play():
 	start_time = OS.get_ticks_usec()
+	count_qb = 0
 	$Music.play()
-
-
-# Signal that a beat has happened
-func beat():
-	pass
 
 
 func _ready():
@@ -51,10 +54,15 @@ func _ready():
 
 func _process(delta):
 	var time = corrected_time()
-	if time - last_beat >= usec_per_beat():
-		emit_signal("beat")
-		last_beat = time
-
-
-func _on_Conductor_beat():
-	print("Beat! %f" % song_time())
+	if time - last_qb >= usec_per_quarter_beat():
+		emit_signal("quarter_beat")
+		if count_qb % 2 == 0:
+			emit_signal("half_beat")
+		if count_qb % 4 == 0:
+			emit_signal("beat")
+		if count_qb % 8 == 0:
+			emit_signal("two_beats")
+		if count_qb % 16 == 0:
+			emit_signal("four_beats")
+		last_qb = time
+		count_qb += 1
