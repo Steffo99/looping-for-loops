@@ -9,9 +9,13 @@
 [node name="Conductor" parent="." instance=ExtResource( 2 )]
 song_offset = 200000.0
 
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 622.258, 379.938 )
+
 [node name="ConveyorBelt" parent="." instance=ExtResource( 3 )]
-position = Vector2( 662.439, 610.32 )
+position = Vector2( 640, 700 )
 conveyor_speed = 100.0
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 918.923, 436.874 )
+[node name="ConveyorBelt2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 640, 20 )
+conveyor_speed = -100.0

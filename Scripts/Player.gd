@@ -1,15 +1,19 @@
 extends ExtendedKinematicBody2D
 class_name Player
 
-export(Vector2) var gravity: Vector2
+export(Vector2) var gravity: Vector2 = Vector2(0, 10)
 var speed: Vector2 = Vector2.ZERO
 
-export(float) var move_speed: float
-export(float) var jump_speed: float
-export(float) var jump_buffer_msec: float
+export(float) var move_speed: float = 300
+export(float) var jump_speed: float = 500
+export(float) var jump_buffer_msec: float = 64
+export(float) var quick_fall_gravity_multiplier: float = 4
 
-var can_jump = false
-var jump_buffer = 0
+var can_jump: bool = false
+var jump_buffer: int = 0
+
+var is_quick_falling: bool = false
+var quick_fall_buffer: int = 0
 
 
 func _physics_process(delta):
@@ -20,17 +24,27 @@ func _physics_process(delta):
 		var gravity_speed = speed * up_normal
 		speed -= gravity_speed * floor_normal
 		can_jump = true
+		is_quick_falling = false
 	
-	speed += gravity
+	if is_quick_falling:
+		speed += gravity * quick_fall_gravity_multiplier
+	else:
+		speed += gravity
 	
 	var current_time = OS.get_ticks_msec()
 	
 	if Input.is_action_just_pressed("plr_up"):
 		jump_buffer = current_time
 	
+	if Input.is_action_just_released("plr_up"):
+		quick_fall_buffer = OS.get_ticks_msec()
+	
 	if can_jump and current_time - jump_buffer <= jump_buffer_msec:
 		speed += up_normal * jump_speed
 		can_jump = false
+	
+	if quick_fall_buffer > jump_buffer:
+		 is_quick_falling = true
 	
 	var movement = speed
 	
