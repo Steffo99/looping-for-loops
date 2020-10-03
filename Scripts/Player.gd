@@ -5,9 +5,10 @@ export(Vector2) var gravity: Vector2 = Vector2(0, 10)
 var speed: Vector2 = Vector2.ZERO
 
 export(float) var move_speed: float = 300
-export(float) var jump_speed: float = 500
-export(float) var jump_buffer_msec: float = 64
+export(float) var jump_speed: float = 425
+export(float) var jump_buffer_msec: float = 80
 export(float) var quick_fall_gravity_multiplier: float = 4
+export(bool) var stop_jump_on_bonk: bool = true
 
 var can_jump: bool = false
 var jump_buffer: int = 0
@@ -27,6 +28,9 @@ func _physics_process(delta):
 		speed -= gravity_speed * floor_normal
 		can_jump = true
 		is_quick_falling = false
+	
+	if stop_jump_on_bonk and is_on_ceiling():
+		speed.y = 0
 	
 	if is_quick_falling:
 		speed += gravity * quick_fall_gravity_multiplier
