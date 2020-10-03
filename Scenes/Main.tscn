@@ -21,14 +21,8 @@ conveyor_speed = 100.0
 
 [node name="SingleScreenWalls" parent="." instance=ExtResource( 4 )]
 
-[node name="Press" parent="." instance=ExtResource( 5 )]
-position = Vector2( 420, 0 )
-
 [node name="Conductor" parent="." instance=ExtResource( 2 )]
-song_bpm = 30.0
-
-[node name="Conductor2" parent="." instance=ExtResource( 2 )]
-song_bpm = 30.0
+song_bpm = 120.0
 
 [node name="ScrollingBlock" parent="." instance=ExtResource( 6 )]
 position = Vector2( 800, 660 )
@@ -69,3 +63,34 @@ position = Vector2( 1240, 220 )
 [node name="ScrollingBlock13" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1660, 220 )
 scale = Vector2( 20, 1 )
+
+[node name="ScrollingBlock14" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2240, 360 )
+scale = Vector2( 5, 1 )
+
+[node name="ScrollingBlock15" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2540, 280 )
+scale = Vector2( 5, 1 )
+
+[node name="ScrollingBlock16" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2820, 400 )
+scale = Vector2( 5, 1 )
+
+[node name="Press" parent="." instance=ExtResource( 5 )]
+position = Vector2( 160, 0 )
+scroll_velocity = Vector2( 0, 0 )
+
+[node name="Press2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3120, 0 )
+
+[node name="Press3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3280, 0 )
+subbeat_offset = 3
+
+[node name="Press4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3440, 0 )
+subbeat_offset = 6
+
+[node name="Press5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3600, 0 )
+subbeat_offset = 9
