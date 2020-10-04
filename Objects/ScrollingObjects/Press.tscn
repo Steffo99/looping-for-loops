@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/press_bottom.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Obstacles/Press.gd" type="Script" id=2]
+[ext_resource path="res://Objects/ScrollingObjects/Press.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/press_pipes.png" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
@@ -91,4 +91,3 @@ disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 76.5 )
-[connection signal="body_entered" from="Bottom/StompArea" to="." method="_on_StompArea_body_entered"]

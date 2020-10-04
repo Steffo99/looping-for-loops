@@ -1,4 +1,4 @@
-extends ScrollingArea
+extends Area2D
 class_name Buzzsaw
 
 

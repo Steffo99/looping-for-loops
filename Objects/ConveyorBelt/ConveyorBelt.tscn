@@ -1,9 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tilesets/ConveyorBelt.tres" type="TileSet" id=1]
-[ext_resource path="res://Scripts/ConveyorBelt.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Gear.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/Gears.gd" type="Script" id=5]
+[ext_resource path="res://Objects/ConveyorBelt/ConveyorBelt.gd" type="Script" id=2]
+[ext_resource path="res://Objects/ConveyorBelt/Gear.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/ConveyorBelt/Gears.gd" type="Script" id=5]
+
+
 
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -125,3 +127,4 @@ position = Vector2( 800, 0 )
 
 [node name="Gear32" parent="Gears" instance=ExtResource( 3 )]
 position = Vector2( 840, 0 )
+[connection signal="cb_speed_changed" from="." to="Gears" method="_on_ConveyorBelt_cb_speed_changed"]

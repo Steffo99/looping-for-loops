@@ -9,61 +9,61 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "ScrollingArea",
+"base": "Area2D",
 "class": "Buzzsaw",
 "language": "GDScript",
-"path": "res://Scripts/Obstacles/Buzzsaw.gd"
+"path": "res://Objects/ScrollingObjects/Buzzsaw.gd"
 }, {
 "base": "Node",
 "class": "Conductor",
 "language": "GDScript",
-"path": "res://Scripts/Conductor.gd"
+"path": "res://Objects/SpecialObjects/Conductor.gd"
 }, {
 "base": "StaticBody2D",
 "class": "ConveyorBelt",
 "language": "GDScript",
-"path": "res://Scripts/ConveyorBelt.gd"
+"path": "res://Objects/ConveyorBelt/ConveyorBelt.gd"
+}, {
+"base": "ScrollParent",
+"class": "ConveyorScrollParent",
+"language": "GDScript",
+"path": "res://Objects/ScrollingObjects/ConveyorScrollParent.gd"
 }, {
 "base": "KinematicBody2D",
-"class": "ExtendedKinematicBody2D",
-"language": "GDScript",
-"path": "res://Scripts/ExtendedKinematicBody2D.gd"
-}, {
-"base": "ExtendedKinematicBody2D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Scripts/Player.gd"
+"path": "res://Objects/SpecialObjects/Player.gd"
 }, {
-"base": "ScrollingBlock",
+"base": "KinematicBody2D",
 "class": "Press",
 "language": "GDScript",
-"path": "res://Scripts/Obstacles/Press.gd"
+"path": "res://Objects/ScrollingObjects/Press.gd"
 }, {
-"base": "Area2D",
+"base": "Node",
+"class": "ScrollParent",
+"language": "GDScript",
+"path": "res://Objects/ScrollingObjects/ScrollParent.gd"
+}, {
+"base": "ScrollingObject2D",
 "class": "ScrollingArea",
 "language": "GDScript",
 "path": "res://ScrollingArea.gd"
-}, {
-"base": "ExtendedKinematicBody2D",
-"class": "ScrollingBlock",
-"language": "GDScript",
-"path": "res://Scripts/Obstacles/ScrollingBlock.gd"
 } ]
 _global_script_class_icons={
 "Buzzsaw": "",
 "Conductor": "",
 "ConveyorBelt": "",
-"ExtendedKinematicBody2D": "",
+"ConveyorScrollParent": "",
 "Player": "",
 "Press": "",
-"ScrollingArea": "",
-"ScrollingBlock": ""
+"ScrollParent": "",
+"ScrollingArea": ""
 }
 
 [application]
 
 config/name="ld47"
-run/main_scene="res://Scenes/Main.tscn"
+run/main_scene="res://Objects/SpecialObjects/Main.tscn"
 
 [display]
 

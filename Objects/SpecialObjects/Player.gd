@@ -1,23 +1,32 @@
-extends ExtendedKinematicBody2D
+extends KinematicBody2D
 class_name Player
 
-export(Vector2) var gravity: Vector2 = Vector2(0, 10)
-var speed: Vector2 = Vector2.ZERO
 
+export(Vector2) var gravity: Vector2 = Vector2(0, 10)
 export(float) var move_speed: float = 300
 export(float) var jump_speed: float = 425
 export(float) var jump_buffer_msec: float = 80
 export(float) var quick_fall_gravity_multiplier: float = 4
 export(bool) var stop_jump_on_bonk: bool = true
 
+var speed: Vector2 = Vector2.ZERO
 var can_jump: bool = false
 var jump_buffer: int = 0
-
 var is_quick_falling: bool = false
 var quick_fall_buffer: int = 0
 
+
+func get_floor():
+	for slide in get_slide_count():
+		var collision = get_slide_collision(slide)
+		if collision.normal != get_floor_normal():
+			continue
+		return collision.collider
+
+
 func up_normal():
 	return -gravity.normalized()
+
 
 func _physics_process(delta):
 	var up_normal = up_normal()

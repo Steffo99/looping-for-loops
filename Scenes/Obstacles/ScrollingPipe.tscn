@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Scripts/Obstacles/ScrollingBlock.gd" type="Script" id=2]
-
-[node name="ScrollingPipe" type="KinematicBody2D"]
-collision_layer = 8
-collision_mask = 2
-motion/sync_to_physics = true
-script = ExtResource( 2 )

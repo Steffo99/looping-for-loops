@@ -6,18 +6,15 @@ class_name ConveyorBelt
 export(float) var cb_speed = 100 setget set_cb_speed, get_cb_speed
 export(bool) var randomize_gear_starting_position = false
 
+signal cb_speed_changed(old, new)
+
 func set_cb_speed(value):
+	var old = cb_speed
 	cb_speed = value
-	$Gears.set_cb_speed(value)
+	emit_signal("cb_speed_changed", old, value)
 
 func get_cb_speed():
 	return cb_speed
-
-
-func _ready():
-	$Gears.set_randomize_start_position(randomize_gear_starting_position)
-	$Gears.set_cb_speed(cb_speed)
-
 
 func get_relative_cb_speed(other_pos: Vector2):
 	var relative_position = other_pos - position
