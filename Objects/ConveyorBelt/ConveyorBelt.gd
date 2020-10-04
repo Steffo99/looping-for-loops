@@ -3,10 +3,13 @@ class_name ConveyorBelt
 
 
 # Speed (and direction) of the conveyor belt
-export(float) var cb_speed = 100 setget set_cb_speed, get_cb_speed
-export(bool) var randomize_gear_starting_position = false
+export(float) var cb_speed: float = 100 setget set_cb_speed, get_cb_speed
+export(bool) var randomize_gear_starting_position: bool = false
 
 signal cb_speed_changed(old, new)
+
+func _ready():
+	set_cb_speed(cb_speed)
 
 func set_cb_speed(value):
 	var old = cb_speed
