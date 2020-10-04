@@ -56,8 +56,8 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		var current_floor = get_floor()
-		if current_floor.has_method("get_conveyor_speed"):
-			movement += floor_normal.rotated(- PI / 2) * current_floor.get_conveyor_speed(position)
+		if current_floor.has_method("get_relative_cb_speed"):
+			movement += floor_normal.rotated(- PI / 2) * current_floor.get_relative_cb_speed(position)
 	
 	if Input.is_action_pressed("plr_left"):
 		movement += Vector2.LEFT * move_speed

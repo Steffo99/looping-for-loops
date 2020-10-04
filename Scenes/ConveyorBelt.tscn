@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tilesets/ConveyorBelt.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/ConveyorBelt.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Gear.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Gears.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 680, 20 )
+extents = Vector2( 640, 20 )
 
 [node name="ConveyorBelt" type="StaticBody2D"]
 collision_layer = 4
@@ -22,4 +24,103 @@ cell_quadrant_size = 40
 cell_tile_origin = 1
 centered_textures = true
 format = 1
-tile_data = PoolIntArray( 65519, 0, 0, 65520, 1, 0, 65521, 1, 0, 65522, 1, 0, 65523, 1, 0, 65524, 1, 0, 65525, 1, 0, 65526, 1, 0, 65527, 1, 0, 65528, 1, 0, 65529, 1, 0, 65530, 1, 0, 65531, 1, 0, 65532, 1, 0, 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 2, 0 )
+tile_data = PoolIntArray( 65520, 0, 0, 65521, 0, 0, 65522, 0, 0, 65523, 0, 0, 65524, 0, 0, 65525, 0, 0, 65526, 0, 0, 65527, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0 )
+
+[node name="Gears" type="Node2D" parent="."]
+position = Vector2( -220, 0 )
+script = ExtResource( 5 )
+
+[node name="Gear" parent="Gears" instance=ExtResource( 3 )]
+
+[node name="Gear2" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( -360, 0 )
+
+[node name="Gear3" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( -320, 0 )
+
+[node name="Gear4" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( -280, 0 )
+
+[node name="Gear5" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( -240, 0 )
+
+[node name="Gear6" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( -200, 0 )
+
+[node name="Gear7" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( -160, 0 )
+
+[node name="Gear8" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( -120, 0 )
+
+[node name="Gear9" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( -80, 0 )
+
+[node name="Gear10" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( -40, 0 )
+
+[node name="Gear11" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+
+[node name="Gear12" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 40, 0 )
+
+[node name="Gear13" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 80, 0 )
+
+[node name="Gear14" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 120, 0 )
+
+[node name="Gear15" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 160, 0 )
+
+[node name="Gear16" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 200, 0 )
+
+[node name="Gear17" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 240, 0 )
+
+[node name="Gear18" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 280, 0 )
+
+[node name="Gear19" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 320, 0 )
+
+[node name="Gear20" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 360, 0 )
+
+[node name="Gear21" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 400, 0 )
+
+[node name="Gear22" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 440, 0 )
+
+[node name="Gear23" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 480, 0 )
+
+[node name="Gear24" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 520, 0 )
+
+[node name="Gear25" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 560, 0 )
+
+[node name="Gear26" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 600, 0 )
+
+[node name="Gear27" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 640, 0 )
+
+[node name="Gear28" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 680, 0 )
+
+[node name="Gear29" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 720, 0 )
+
+[node name="Gear30" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 760, 0 )
+
+[node name="Gear31" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 800, 0 )
+
+[node name="Gear32" parent="Gears" instance=ExtResource( 3 )]
+position = Vector2( 840, 0 )
