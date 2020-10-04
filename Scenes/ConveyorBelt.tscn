@@ -3,7 +3,8 @@
 [ext_resource path="res://Tilesets/ConveyorBelt.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/ConveyorBelt.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Gear.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Gears.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Gears.gd" type="Script" id=5]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 640, 20 )

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Conductor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ConveyorBelt.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/SingleScreenWalls.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Obstacles/Press.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Obstacles/ScrollingPipe.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Obstacles/Buzzsaw.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Obstacles/ScrollingPipesTileMap.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node2D"]
 __meta__ = {
@@ -11,12 +15,45 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 622.258, 379.938 )
+position = Vector2( 340, 500 )
 
 [node name="ConveyorBelt" parent="." instance=ExtResource( 3 )]
 position = Vector2( 640, 700 )
-cb_speed = 100.0
 
 [node name="SingleScreenWalls" parent="." instance=ExtResource( 4 )]
 
 [node name="Conductor" parent="." instance=ExtResource( 2 )]
+
+[node name="Buzzsaw" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1000, 540 )
+
+[node name="Buzzsaw2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1160, 540 )
+
+[node name="Buzzsaw4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1840, 540 )
+
+[node name="Buzzsaw5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2140, 660 )
+
+[node name="Buzzsaw6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2280, 660 )
+
+[node name="Buzzsaw7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2640, 580 )
+
+[node name="Buzzsaw8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2980, 260 )
+
+[node name="Buzzsaw3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1080, 540 )
+
+[node name="ScrollingPipe" parent="." instance=ExtResource( 6 )]
+position = Vector2( 840, 540 )
+
+[node name="TileMap" parent="ScrollingPipe" instance=ExtResource( 8 )]
+position = Vector2( 20, -20 )
+tile_data = PoolIntArray( -524237, 0, 65536, -524234, 0, 65536, -458711, 0, 0, -458710, 0, 1, -458704, 0, 0, -458703, 0, 1, -458701, 0, 65536, -458698, 0, 65536, -458696, 0, 0, -458695, 0, 1, -393179, 0, 0, -393178, 0, 1, -393175, 0, 131072, -393174, 0, 131073, -393170, 0, 0, -393169, 0, 65537, -393168, 0, 131073, -393167, 0, 65536, -393165, 0, 65536, -393162, 0, 65536, -393160, 0, 65536, -393159, 0, 131072, -393158, 0, 65537, -393157, 0, 1, -327647, 0, 0, -327646, 0, 1, -327643, 0, 131072, -327642, 0, 131073, -327634, 0, 65536, -327631, 0, 65536, -327629, 0, 131072, -327628, 0, 65537, -327627, 0, 65537, -327626, 0, 131073, -327624, 0, 65536, -327621, 0, 65536, -262118, 0, 0, -262117, 0, 65537, -262116, 0, 65537, -262115, 0, 65537, -262114, 0, 1, -262111, 0, 131072, -262110, 0, 131073, -262098, 0, 65536, -262095, 0, 131072, -262094, 0, 65537, -262093, 0, 65537, -262092, 0, 65537, -262091, 0, 65537, -262090, 0, 65537, -262089, 0, 65537, -262088, 0, 131073, -262085, 0, 65536, -196582, 0, 65536, -196578, 0, 65536, -196562, 0, 65536, -196549, 0, 65536, -131046, 0, 65536, -131042, 0, 65536, -131026, 0, 65536, -1, 0, 0, -65536, 0, 65537, -65535, 0, 65537, -65527, 0, 65537, -65526, 0, 65537, -65525, 0, 1, -65518, 0, 0, -65517, 0, 65537, -65516, 0, 65537, -65515, 0, 65537, -65514, 0, 1, -65510, 0, 65536, -65506, 0, 65536, -65490, 0, 65536, -65484, 0, 0, -65483, 0, 1, 65535, 0, 65536, 11, 0, 65536, 17, 0, 0, 18, 0, 131073, 22, 0, 65536, 26, 0, 65536, 30, 0, 65536, 46, 0, 65536, 47, 0, 0, 48, 0, 65537, 49, 0, 65537, 50, 0, 65537, 51, 0, 65537, 52, 0, 131073, 53, 0, 131072, 54, 0, 65537, 55, 0, 65537, 56, 0, 65537, 57, 0, 1, 59, 0, 0, 60, 0, 1, 131071, 0, 65536, 65547, 0, 65536, 65552, 0, 0, 65553, 0, 131073, 65558, 0, 65536, 65561, 0, 0, 65562, 0, 131073, 65566, 0, 65536, 65582, 0, 65536, 65583, 0, 65536, 65593, 0, 65536, 65595, 0, 65536, 65596, 0, 65536, 65597, 0, 0, 65598, 0, 1, 196607, 0, 65536, 131083, 0, 65536, 131087, 0, 0, 131088, 0, 131073, 131094, 0, 65536, 131097, 0, 65536, 131102, 0, 65536, 131109, 0, 0, 131110, 0, 65537, 131111, 0, 65537, 131112, 0, 65537, 131113, 0, 65537, 131114, 0, 1, 131118, 0, 65536, 131119, 0, 65536, 131125, 0, 65537, 131126, 0, 65537, 131127, 0, 65537, 131128, 0, 65537, 131129, 0, 131073, 131131, 0, 65536, 131132, 0, 65536, 131133, 0, 65536, 131134, 0, 65536, 131135, 0, 0, 131136, 0, 1, 262143, 0, 65536, 196619, 0, 65536, 196622, 0, 0, 196623, 0, 131073, 196630, 0, 65536, 196633, 0, 65536, 196638, 0, 65536, 196645, 0, 65536, 196650, 0, 65536, 196654, 0, 65536, 196655, 0, 65536, 196667, 0, 65536, 196668, 0, 65536, 196669, 0, 65536, 196670, 0, 65536, 196671, 0, 65536, 196672, 0, 65536, 196673, 0, 0, 196674, 0, 1 )
+
+[node name="Press" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3720, 0 )
