@@ -20,6 +20,7 @@ __meta__ = {
 
 [node name="ConveyorBelt" parent="." instance=ExtResource( 3 )]
 position = Vector2( 640, 700 )
+cb_speed = 100.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 340, 500 )
