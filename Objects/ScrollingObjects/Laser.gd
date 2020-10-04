@@ -10,10 +10,8 @@ func _ready():
 
 func set_active(value):
 	is_active = value
-	if value:
-		$Gun.visible = true
-	else:
-		$Gun.visible = false
+	$Beam.visible = value
+	$Beam/RecreatingRectangleShape.disabled = not value
 
 func activate():
 	set_active(true)
