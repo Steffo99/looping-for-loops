@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ScrollingArea",
+"class": "Buzzsaw",
+"language": "GDScript",
+"path": "res://Scripts/Obstacles/Buzzsaw.gd"
+}, {
 "base": "Node",
 "class": "Conductor",
 "language": "GDScript",
@@ -29,10 +34,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
 }, {
-"base": "StaticBody2D",
+"base": "ScrollingBlock",
 "class": "Press",
 "language": "GDScript",
 "path": "res://Scripts/Obstacles/Press.gd"
+}, {
+"base": "Area2D",
+"class": "ScrollingArea",
+"language": "GDScript",
+"path": "res://ScrollingArea.gd"
 }, {
 "base": "ExtendedKinematicBody2D",
 "class": "ScrollingBlock",
@@ -40,11 +50,13 @@ _global_script_classes=[ {
 "path": "res://Scripts/Obstacles/ScrollingBlock.gd"
 } ]
 _global_script_class_icons={
+"Buzzsaw": "",
 "Conductor": "",
 "ConveyorBelt": "",
 "ExtendedKinematicBody2D": "",
 "Player": "",
 "Press": "",
+"ScrollingArea": "",
 "ScrollingBlock": ""
 }
 
