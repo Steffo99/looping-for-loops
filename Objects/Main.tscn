@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/SpecialObjects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/SpecialObjects/Conductor.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Objects/SpecialObjects/SingleScreenWalls.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/SpecialObjects/Wrapper.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/ScrollingObjects/ScrollingBlock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 __meta__ = {
@@ -20,7 +21,6 @@ __meta__ = {
 
 [node name="ConveyorBelt" parent="." instance=ExtResource( 3 )]
 position = Vector2( 640, 700 )
-cb_speed = 100.0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 340, 500 )
@@ -33,3 +33,6 @@ position = Vector2( 840, 660 )
 
 [node name="ScrollingBlock3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 980, 660 )
+
+[node name="GameButton" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1000, 480 )
