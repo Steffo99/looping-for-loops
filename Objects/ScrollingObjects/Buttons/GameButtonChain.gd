@@ -1,9 +1,9 @@
 extends Node2D
 
 var chain_icons: Array = [
-	preload("res://Sprites/1.png"),
-	preload("res://Sprites/2.png"),
-	preload("res://Sprites/3.png")
+	null,
+	null,
+	null,
 ]
 
 

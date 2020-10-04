@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button_pressed.png-36b20c9854df3037cade8d1ea8f243a6.stex"
+path="res://.import/piston.png-e1863ae5cc341b4130f567ea79d1911c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/button_pressed.png"
-dest_files=[ "res://.import/button_pressed.png-36b20c9854df3037cade8d1ea8f243a6.stex" ]
+source_file="res://Sprites/piston.png"
+dest_files=[ "res://.import/piston.png-e1863ae5cc341b4130f567ea79d1911c.stex" ]
 
 [params]
 

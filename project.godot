@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Objects/ScrollingObjects/Press.gd"
 }, {
+"base": "CollisionShape2D",
+"class": "RecreatingRectangleShape",
+"language": "GDScript",
+"path": "res://Objects/ScrollingObjects/RecreatingRectangleShape.gd"
+}, {
 "base": "Node",
 "class": "ScrollParent",
 "language": "GDScript",
@@ -91,6 +96,7 @@ _global_script_class_icons={
 "Menu": "",
 "Player": "",
 "Press": "",
+"RecreatingRectangleShape": "",
 "ScrollParent": "",
 "WrapParent": "",
 "Wrapper": ""

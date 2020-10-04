@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objects/SpecialObjects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/SpecialObjects/Conductor.tscn" type="PackedScene" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Objects/SpecialObjects/Wrapper.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/ScrollingObjects/ScrollingBlock.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButtonChain.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/CBSpeedChangeButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/ScrollingObjects/Laser.tscn" type="PackedScene" id=11]
 
 [node name="Main" type="Node2D"]
 __meta__ = {
@@ -24,25 +28,25 @@ total_length = 2000.0
 position = Vector2( 640, 700 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 340, 500 )
+position = Vector2( 360, 640 )
 
 [node name="ScrollingBlock" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1140, 660 )
+position = Vector2( 1040, 480 )
 
 [node name="ScrollingBlock2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1140, 620 )
+position = Vector2( 1080, 480 )
 
 [node name="ScrollingBlock3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1140, 580 )
+position = Vector2( 920, 480 )
 
 [node name="ScrollingBlock4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1500, 660 )
+position = Vector2( 1000, 480 )
 
 [node name="ScrollingBlock5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1500, 620 )
+position = Vector2( 1120, 480 )
 
 [node name="ScrollingBlock6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1500, 580 )
+position = Vector2( 960, 480 )
 
 [node name="Loop" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1200, 580 )
@@ -73,3 +77,24 @@ position = Vector2( 1380, 640 )
 
 [node name="Loop10" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1440, 640 )
+
+[node name="GameButtonChain" parent="." instance=ExtResource( 9 )]
+position = Vector2( 560, 480 )
+
+[node name="GameButton" parent="GameButtonChain" instance=ExtResource( 8 )]
+position = Vector2( 40, 0 )
+
+[node name="GameButton2" parent="GameButtonChain" instance=ExtResource( 8 )]
+position = Vector2( 100, 0 )
+
+[node name="GameButton3" parent="GameButtonChain" instance=ExtResource( 8 )]
+position = Vector2( 160, 0 )
+
+[node name="CBSpeedChangeButton" parent="GameButtonChain" instance=ExtResource( 10 )]
+position = Vector2( 280, 0 )
+
+[node name="Laser" parent="." instance=ExtResource( 11 )]
+position = Vector2( 486, 500 )
+
+[node name="Laser2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 640, 300 )

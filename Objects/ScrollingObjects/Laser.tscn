@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/laser_gun.png" type="Texture" id=1]
+[ext_resource path="res://Objects/ScrollingObjects/Laser.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/laser_beam_end.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/laser_beam_continuous.png" type="Texture" id=4]
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/RecreatingRectangleShape.tscn" type="PackedScene" id=5]
+
+[node name="Laser" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Beam" type="Area2D" parent="."]
+
+[node name="Raycast" type="RayCast2D" parent="Beam"]
+visible = false
+enabled = true
+cast_to = Vector2( 0, 720 )
+collision_mask = 29
+
+[node name="Continuous" type="Sprite" parent="Beam"]
+position = Vector2( -20, 0 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="End" type="Sprite" parent="Beam"]
+position = Vector2( 0, 20 )
+texture = ExtResource( 3 )
+
+[node name="Upper" type="Sprite" parent="Beam"]
+position = Vector2( -20, -20 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="RecreatingRectangleShape" parent="Beam" instance=ExtResource( 5 )]
+
+[node name="Gun" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Gun"]
+position = Vector2( 0, -40 )
+texture = ExtResource( 1 )
