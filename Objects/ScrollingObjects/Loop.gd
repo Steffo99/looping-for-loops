@@ -14,4 +14,10 @@ func _ready():
 
 func _on_Loop_body_entered(body):
 	emit_signal("picked_up")
+	$AnimationPlayer.play("pop fade out")
+	
+	
+func _on_AnimationPlayer_animation_finished(anim_name):
 	queue_free()
+
+
