@@ -14,6 +14,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Objects/ScrollingObjects/Buzzsaw.gd"
 }, {
+"base": "GameButton",
+"class": "CBSpeedChangeButton",
+"language": "GDScript",
+"path": "res://Objects/ScrollingObjects/Buttons/CBSpeedChangeButton.gd"
+}, {
 "base": "Node",
 "class": "Conductor",
 "language": "GDScript",
@@ -33,6 +38,21 @@ _global_script_classes=[ {
 "class": "GameButton",
 "language": "GDScript",
 "path": "res://Objects/ScrollingObjects/Buttons/GameButton.gd"
+}, {
+"base": "Node2D",
+"class": "GhostBlock",
+"language": "GDScript",
+"path": "res://Objects/ScrollingObjects/Ghosts/GhostBlock.gd"
+}, {
+"base": "Area2D",
+"class": "Loop",
+"language": "GDScript",
+"path": "res://Objects/ScrollingObjects/Loop.gd"
+}, {
+"base": "Control",
+"class": "Menu",
+"language": "GDScript",
+"path": "res://Objects/Menu.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -61,10 +81,14 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Buzzsaw": "",
+"CBSpeedChangeButton": "",
 "Conductor": "",
 "ConveyorBelt": "",
 "ConveyorScrollParent": "",
 "GameButton": "",
+"GhostBlock": "",
+"Loop": "",
+"Menu": "",
 "Player": "",
 "Press": "",
 "ScrollParent": "",
@@ -75,7 +99,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ld47"
-run/main_scene="res://Objects/Main.tscn"
+run/main_scene="res://Objects/Menu.tscn"
 
 [display]
 
@@ -113,6 +137,7 @@ plr_right={
 2d_physics/layer_3="Conveyor Belt"
 2d_physics/layer_4="Obstacles"
 2d_physics/layer_5="Screen Walls"
+2d_physics/layer_6="Lööps"
 
 [rendering]
 

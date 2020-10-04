@@ -8,7 +8,7 @@ func set_randomize_start_position(value):
 		children.randomize_start_position = value
 
 
-func _on_ConveyorBelt_cb_speed_changed(old, new):
+func _on_ConveyorBelt_cb_speed_changed(_old, new):
 	for children in get_children():
 		children.set_cb_speed(new)
 

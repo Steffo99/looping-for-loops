@@ -8,6 +8,9 @@ export(bool) var randomize_gear_starting_position: bool = false
 
 signal cb_speed_changed(old, new)
 
+func _ready():
+	set_cb_speed(cb_speed)
+
 func set_cb_speed(value):
 	var old = cb_speed
 	cb_speed = value

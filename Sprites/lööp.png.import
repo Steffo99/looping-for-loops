@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/loop.png-19b502405b67a3e6afb244dc5fd1a967.stex"
+path="res://.import/lööp.png-1d1fc33a2c0a7331c0725497d80b0ce6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/loop.png"
-dest_files=[ "res://.import/loop.png-19b502405b67a3e6afb244dc5fd1a967.stex" ]
+source_file="res://Sprites/lööp.png"
+dest_files=[ "res://.import/lööp.png-1d1fc33a2c0a7331c0725497d80b0ce6.stex" ]
 
 [params]
 

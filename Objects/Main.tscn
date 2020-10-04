@@ -6,7 +6,7 @@
 [ext_resource path="res://Objects/SpecialObjects/SingleScreenWalls.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/SpecialObjects/Wrapper.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/ScrollingObjects/ScrollingBlock.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 __meta__ = {
@@ -16,6 +16,7 @@ __meta__ = {
 [node name="Conductor" parent="." instance=ExtResource( 2 )]
 
 [node name="Wrapper" parent="." instance=ExtResource( 5 )]
+total_length = 2000.0
 
 [node name="SingleScreenWalls" parent="." instance=ExtResource( 4 )]
 
@@ -26,13 +27,49 @@ position = Vector2( 640, 700 )
 position = Vector2( 340, 500 )
 
 [node name="ScrollingBlock" parent="." instance=ExtResource( 6 )]
-position = Vector2( 700, 660 )
+position = Vector2( 1140, 660 )
 
 [node name="ScrollingBlock2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 840, 660 )
+position = Vector2( 1140, 620 )
 
 [node name="ScrollingBlock3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 980, 660 )
+position = Vector2( 1140, 580 )
 
-[node name="GameButton" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1000, 480 )
+[node name="ScrollingBlock4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1500, 660 )
+
+[node name="ScrollingBlock5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1500, 620 )
+
+[node name="ScrollingBlock6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1500, 580 )
+
+[node name="Loop" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1200, 580 )
+
+[node name="Loop2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1260, 580 )
+
+[node name="Loop3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1320, 580 )
+
+[node name="Loop4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1380, 580 )
+
+[node name="Loop5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1440, 580 )
+
+[node name="Loop6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1200, 640 )
+
+[node name="Loop7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1260, 640 )
+
+[node name="Loop8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1320, 640 )
+
+[node name="Loop9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1380, 640 )
+
+[node name="Loop10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1440, 640 )

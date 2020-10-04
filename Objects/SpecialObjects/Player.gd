@@ -28,7 +28,7 @@ func up_normal():
 	return -gravity.normalized()
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var up_normal = up_normal()
 	var floor_normal = get_floor_normal()
 	

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red_button.png-414b3db90d1cea22521067e11dd7d149.stex"
+path="res://.import/ryg_logo.png-5605f215fbb39990d0e629bd40d12489.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/red_button.png"
-dest_files=[ "res://.import/red_button.png-414b3db90d1cea22521067e11dd7d149.stex" ]
+source_file="res://Resources/ryg_logo.png"
+dest_files=[ "res://.import/ryg_logo.png-5605f215fbb39990d0e629bd40d12489.stex" ]
 
 [params]
 

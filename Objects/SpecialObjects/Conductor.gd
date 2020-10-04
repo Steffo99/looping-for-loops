@@ -48,7 +48,7 @@ func _ready():
 	play()
 
 
-func _process(delta):
+func _process(_delta):
 	var time = corrected_time()
 	if time - last_subbeat >= subbeat_usec():
 		emit_signal("subbeat", subbeat_count)
