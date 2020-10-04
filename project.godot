@@ -49,11 +49,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Objects/ScrollingObjects/Utilities/ScrollParent.gd"
 }, {
-"base": "ScrollingObject2D",
-"class": "ScrollingArea",
-"language": "GDScript",
-"path": "res://ScrollingArea.gd"
-}, {
 "base": "Node2D",
 "class": "WrapParent",
 "language": "GDScript",
@@ -73,7 +68,6 @@ _global_script_class_icons={
 "Player": "",
 "Press": "",
 "ScrollParent": "",
-"ScrollingArea": "",
 "WrapParent": "",
 "Wrapper": ""
 }
