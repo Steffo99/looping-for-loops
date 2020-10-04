@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "ScrollParent",
 "class": "ConveyorScrollParent",
 "language": "GDScript",
-"path": "res://Objects/ScrollingObjects/ConveyorScrollParent.gd"
+"path": "res://Objects/ScrollingObjects/Utilities/ConveyorScrollParent.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -42,12 +42,22 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "ScrollParent",
 "language": "GDScript",
-"path": "res://Objects/ScrollingObjects/ScrollParent.gd"
+"path": "res://Objects/ScrollingObjects/Utilities/ScrollParent.gd"
 }, {
 "base": "ScrollingObject2D",
 "class": "ScrollingArea",
 "language": "GDScript",
 "path": "res://ScrollingArea.gd"
+}, {
+"base": "Node2D",
+"class": "WrapParent",
+"language": "GDScript",
+"path": "res://Objects/ScrollingObjects/Utilities/WrapParent.gd"
+}, {
+"base": "Node",
+"class": "Wrapper",
+"language": "GDScript",
+"path": "res://Objects/SpecialObjects/Wrapper.gd"
 } ]
 _global_script_class_icons={
 "Buzzsaw": "",
@@ -57,13 +67,15 @@ _global_script_class_icons={
 "Player": "",
 "Press": "",
 "ScrollParent": "",
-"ScrollingArea": ""
+"ScrollingArea": "",
+"WrapParent": "",
+"Wrapper": ""
 }
 
 [application]
 
 config/name="ld47"
-run/main_scene="res://Objects/SpecialObjects/Main.tscn"
+run/main_scene="res://Objects/Main.tscn"
 
 [display]
 

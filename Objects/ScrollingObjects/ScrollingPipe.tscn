@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Objects/ScrollingObjects/ConveyorScrollParent.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/WrapParent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/ConveyorScrollParent.tscn" type="PackedScene" id=2]
 
 [node name="ScrollingPipe" type="KinematicBody2D"]
 collision_layer = 8
@@ -8,3 +9,5 @@ collision_mask = 2
 motion/sync_to_physics = true
 
 [node name="ConveyorScrollParent" parent="." instance=ExtResource( 2 )]
+
+[node name="WrapParent" parent="." instance=ExtResource( 1 )]

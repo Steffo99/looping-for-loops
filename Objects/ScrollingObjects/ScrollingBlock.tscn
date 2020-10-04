@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/crate.png" type="Texture" id=1]
-[ext_resource path="res://Objects/ScrollingObjects/ConveyorScrollParent.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/ConveyorScrollParent.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/WrapParent.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
@@ -18,3 +19,6 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="ConveyorScrollParent" parent="." instance=ExtResource( 2 )]
+
+[node name="WrapParent" parent="." instance=ExtResource( 3 )]
+position = Vector2( 24, 0 )
