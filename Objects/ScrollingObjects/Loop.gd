@@ -14,6 +14,7 @@ func _ready():
 
 func _on_Loop_body_entered(body):
 	emit_signal("picked_up")
+	body.loops_collected += 1
 	$AnimationPlayer.play("pop fade out")
 	
 	

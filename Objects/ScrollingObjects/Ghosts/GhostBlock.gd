@@ -1,8 +1,8 @@
 extends Node2D
 class_name GhostBlock
 
-var active_sprite: Texture = preload("res://Sprites/ghost_block_active.png")
-var inactive_sprite: Texture = preload("res://Sprites/ghost_block_inactive.png")
+var active_sprite: Texture = preload("res://Sprites/block_ON.png")
+var inactive_sprite: Texture = preload("res://Sprites/block_OFF.png")
 export(bool) var is_active: bool = true setget set_active
 
 

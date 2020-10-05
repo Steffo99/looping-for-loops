@@ -14,7 +14,7 @@ var can_jump: bool = false
 var jump_buffer: int = 0
 var is_quick_falling: bool = false
 var quick_fall_buffer: int = 0
-
+var loops_collected: int = 0
 
 func get_floor():
 	for slide in get_slide_count():
@@ -29,7 +29,6 @@ func up_normal():
 
 func _process(delta):
 	var actual_speed = speed.y - gravity.y
-	print("Actual speed: %s" % actual_speed)
 	if Input.is_action_pressed("plr_left"):
 		if actual_speed < 0:
 			$Body.animation = "up_left"

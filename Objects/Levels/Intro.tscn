@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/CBSpeedChangeButton.gd" type="Script" id=1]
+[ext_resource path="res://Tilesets/Pipes.tres" type="TileSet" id=2]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/button_right.png" type="Texture" id=4]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.gd" type="Script" id=5]
+[ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/ScrollingObjects/Loop.gd" type="Script" id=8]
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/ScrollingPipesTileMap.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingPipe.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/CBSpeedChangeButton.tscn" type="PackedScene" id=12]
+
+[node name="Intro" type="Node2D"]
+
+[node name="ScrollingPipe" type="KinematicBody2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1300, -20 )
+collision_layer = 8
+collision_mask = 2
+motion/sync_to_physics = true
+
+[node name="TileMap" type="TileMap" parent="ScrollingPipe" instance=ExtResource( 9 )]
+position = Vector2( -1140, 660 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 40, 40 )
+cell_quadrant_size = 40
+collision_use_kinematic = true
+collision_layer = 8
+collision_mask = 2
+format = 1
+tile_data = PoolIntArray( -393205, 0, 0, -393204, 0, 65537, -393200, 0, 65537, -393199, 0, 1, -327669, 0, 65536, -327663, 0, 65536, -262133, 0, 65536, -262127, 0, 65536, -196597, 0, 65536, -196591, 0, 65536, -131065, 0, 0, -131064, 0, 65537, -131063, 0, 65537, -131062, 0, 65537, -131061, 0, 131073, -131055, 0, 131072, -131054, 0, 65537, -131053, 0, 65537, -131052, 0, 65537, -131051, 0, 1, -65534, 0, 0, -65533, 0, 65537, -65532, 0, 1, -65529, 0, 65536, -65515, 0, 65536, 2, 0, 65536, 4, 0, 65536, 7, 0, 65536, 21, 0, 65536 )
+
+[node name="CBSpeedChangeButton" type="Area2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 1260, 660 )
+collision_layer = 8
+collision_mask = 2147483648
+script = ExtResource( 1 )
+color = Color( 0, 1, 0, 1 )
+icon = ExtResource( 4 )
+change = 100.0
+
+[node name="Loop" type="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 300, 580 )
+collision_layer = 32
+collision_mask = 2
+script = ExtResource( 8 )
+
+[node name="Loop2" type="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 500, 540 )
+collision_layer = 32
+collision_mask = 2
+script = ExtResource( 8 )
+
+[node name="Loop3" type="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 740, 380 )
+collision_layer = 32
+collision_mask = 2
+script = ExtResource( 8 )
+
+[node name="Loop4" type="Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( 980, 540 )
+collision_layer = 32
+collision_mask = 2
+script = ExtResource( 8 )
+
+[node name="GhostGroup" type="Node2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 740, 420 )
+script = ExtResource( 5 )
+
+[node name="GhostBlock" type="StaticBody2D" parent="GhostGroup" instance=ExtResource( 11 )]
+position = Vector2( -40, 0 )
+script = ExtResource( 3 )
+
+[node name="GhostBlock2" type="StaticBody2D" parent="GhostGroup" instance=ExtResource( 11 )]
+script = ExtResource( 3 )
+
+[node name="GhostBlock3" type="StaticBody2D" parent="GhostGroup" instance=ExtResource( 11 )]
+position = Vector2( 40, 0 )
+script = ExtResource( 3 )
+[connection signal="clicked" from="CBSpeedChangeButton" to="CBSpeedChangeButton" method="_on_GameButton_clicked"]
+[connection signal="input_event" from="CBSpeedChangeButton" to="CBSpeedChangeButton" method="_on_GameButton_input_event"]
+[connection signal="body_entered" from="Loop" to="Loop" method="_on_Loop_body_entered"]
+[connection signal="body_entered" from="Loop2" to="Loop2" method="_on_Loop_body_entered"]
+[connection signal="body_entered" from="Loop3" to="Loop3" method="_on_Loop_body_entered"]
+[connection signal="body_entered" from="Loop4" to="Loop4" method="_on_Loop_body_entered"]
