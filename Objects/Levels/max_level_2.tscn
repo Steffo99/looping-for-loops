@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/ScrollingPipesTileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingPipe.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/ScrollingObjects/Buzzsaw.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingLaser.tscn" type="PackedScene" id=8]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Laser" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1180, 440 )
+
+[node name="Buzzsaw" parent="." instance=ExtResource( 3 )]
+position = Vector2( 740, 180 )
+
+[node name="Buzzsaw2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 900, 420 )
+
+[node name="Buzzsaw3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 740, 640 )
+
+[node name="ScrollingPipe" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1280, 0 )
+
+[node name="TileMap" parent="ScrollingPipe" instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 65526, 0, 65536, 131062, 0, 65536, 196591, 0, 0, 196592, 0, 65537, 196593, 0, 65537, 196594, 0, 1, 196598, 0, 65536, 262127, 0, 65536, 262130, 0, 65536, 262134, 0, 65536, 327663, 0, 65536, 327666, 0, 65536, 327670, 0, 65536, 393196, 0, 0, 393197, 0, 65537, 393198, 0, 65537, 393199, 0, 131073, 393202, 0, 65536, 393206, 0, 65536, 458732, 0, 65536, 458738, 0, 65536, 458742, 0, 65536, 524268, 0, 65536, 524274, 0, 65536, 524278, 0, 65536, 589801, 0, 0, 589802, 0, 65537, 589803, 0, 65537, 589804, 0, 131073, 589810, 0, 65536, 589814, 0, 65536, 655337, 0, 65536, 655346, 0, 65536, 655350, 0, 65536, 720873, 0, 65536, 720882, 0, 65536, 720886, 0, 65536, 786406, 0, 0, 786407, 0, 65537, 786408, 0, 65537, 786409, 0, 131073, 851942, 0, 65536, 917478, 0, 65536, 917485, 0, 0, 917486, 0, 65537, 917487, 0, 65537, 917488, 0, 65537, 917489, 0, 65537, 917490, 0, 65536, 983011, 0, 0, 983012, 0, 65537, 983013, 0, 65537, 983014, 0, 131073, 983021, 0, 131072, 983022, 0, 131073, 983026, 0, 65536, 1048547, 0, 65536, 1048562, 0, 65536, 1114083, 0, 65536, 1114098, 0, 65536 )
+
+[node name="GameButton" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1040, 540 )
+
+[node name="GhostGroup" parent="." instance=ExtResource( 5 )]
+position = Vector2( 680, 480 )
+
+[node name="GhostBlock4" parent="GhostGroup" instance=ExtResource( 7 )]
+position = Vector2( 60, -20 )
+
+[node name="GhostBlock5" parent="GhostGroup" instance=ExtResource( 7 )]
+position = Vector2( 60, 20 )
+
+[node name="GhostBlock6" parent="GhostGroup" instance=ExtResource( 7 )]
+position = Vector2( 500, -100 )
+
+[node name="Loops" type="Node2D" parent="."]
+
+[node name="Loop" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 680, 500 )
+
+[node name="Loop3" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 640, 500 )
+
+[node name="Loop5" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 600, 500 )
+
+[node name="Loop7" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 560, 500 )
+
+[node name="Loop19" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 40, 440 )
+
+[node name="Loop22" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 160, 320 )
+
+[node name="Loop25" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 300, 220 )
+
+[node name="Loop28" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 420, 120 )
+[connection signal="clicked" from="GameButton" to="GhostGroup" method="toggle"]
