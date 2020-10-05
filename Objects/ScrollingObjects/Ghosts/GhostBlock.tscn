@@ -1,18 +1,41 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/block_OFF.png" type="Texture" id=2]
 [ext_resource path="res://Objects/ScrollingObjects/Utilities/ConveyorScrollParent.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/ScrollingObjects/Utilities/WrapParent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/block_ON.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Appear"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Active:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
 
-[node name="GhostBlock" type="StaticBody2D"]
+[node name="GhostBlock" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 3.0
+anims/Appear = SubResource( 2 )
+
+[node name="Inactive" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+
+[node name="Active" type="Sprite" parent="."]
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

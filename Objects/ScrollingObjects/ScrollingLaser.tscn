@@ -8,7 +8,7 @@
 [ext_resource path="res://Objects/ScrollingObjects/Utilities/WrapParent.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/ScrollingObjects/Utilities/ConveyorScrollParent.tscn" type="PackedScene" id=7]
 
-[node name="Laser" type="Node2D"]
+[node name="ScrollingLaser" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Beam" type="Area2D" parent="."]

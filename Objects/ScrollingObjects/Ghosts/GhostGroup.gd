@@ -1,4 +1,5 @@
 extends Node2D
+class_name GhostGroup
 
 
 func set_active(value):

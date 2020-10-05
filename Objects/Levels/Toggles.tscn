@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://Objects/ScrollingObjects/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.tscn" type="PackedScene" id=6]
@@ -34,7 +35,7 @@ position = Vector2( -740, 380 )
 position = Vector2( -700, 420 )
 
 [node name="GameButton" parent="GhostGroup2" instance=ExtResource( 5 )]
-position = Vector2( 200, -160 )
+position = Vector2( 480, 160 )
 
 [node name="GameButton2" parent="GhostGroup2" instance=ExtResource( 5 )]
 position = Vector2( 560, 160 )
@@ -119,5 +120,10 @@ position = Vector2( -500, 660 )
 
 [node name="Loop16" parent="." instance=ExtResource( 4 )]
 position = Vector2( -180, 660 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+position = Vector2( -500, 360 )
+[connection signal="clicked" from="GhostGroup2/GameButton" to="GhostGroup2/GameButton" method="deactivate"]
 [connection signal="clicked" from="GhostGroup2/GameButton" to="GhostGroup2" method="toggle"]
 [connection signal="clicked" from="GhostGroup2/GameButton2" to="GhostGroup2" method="toggle"]
+[connection signal="clicked" from="GhostGroup2/GameButton2" to="GhostGroup2/GameButton2" method="deactivate"]

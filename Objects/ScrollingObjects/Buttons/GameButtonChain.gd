@@ -1,4 +1,5 @@
 extends Node2D
+class_name GameButtonChain
 
 
 func _ready():
