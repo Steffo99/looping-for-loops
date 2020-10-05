@@ -1,22 +1,24 @@
-extends Node2D
+extends KinematicBody2D
 class_name GhostBlock
 
-var active_sprite: Texture = preload("res://Sprites/block_ON.png")
-var inactive_sprite: Texture = preload("res://Sprites/block_OFF.png")
 export(bool) var is_active: bool = true setget set_active
 
 
 func _ready():
-	set_active(is_active)
+	set_active_no_anim(is_active)
+
+
+func set_active_no_anim(value):
+	$CollisionShape2D.disabled = not value
+	is_active = value
 
 
 func set_active(value):
-	is_active = value
-	$CollisionShape2D.disabled = not value
-	if value:
-		$Sprite.texture = active_sprite
-	else:
-		$Sprite.texture = inactive_sprite
+	if not is_active and value:
+		$AnimationPlayer.play("Appear")
+	elif is_active and not value:
+		$AnimationPlayer.play_backwards("Appear")
+	set_active_no_anim(value)
 
 
 func activate():

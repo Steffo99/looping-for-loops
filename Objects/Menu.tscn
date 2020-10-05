@@ -26,37 +26,36 @@ __meta__ = {
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 margin_right = 1280.0
-margin_bottom = 160.0
+margin_bottom = 120.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CenterContainer"]
-margin_left = 374.0
+margin_left = 535.0
 margin_top = 41.0
-margin_right = 906.0
-margin_bottom = 118.0
+margin_right = 744.0
+margin_bottom = 78.0
 custom_fonts/font = SubResource( 1 )
-text = "(titolo wip)
-Brøther, can you give me the"
+text = "Looping for"
 align = 1
 valign = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="."]
-margin_top = 160.0
+margin_top = 120.0
 margin_right = 1280.0
-margin_bottom = 480.0
+margin_bottom = 440.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="CenterContainer2"]
-margin_left = 178.0
+margin_left = 255.0
 margin_top = 14.0
-margin_right = 1102.0
+margin_right = 1025.0
 margin_bottom = 305.0
 custom_fonts/font = SubResource( 2 )
-text = "LÖÖPS?"
+text = "LÖÖPS"
 align = 1
 valign = 1
 
@@ -72,9 +71,9 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 40.0
+margin_left = 1080.0
 margin_top = 520.0
-margin_right = 200.0
+margin_right = 1240.0
 margin_bottom = 680.0
 texture = ExtResource( 3 )
 __meta__ = {

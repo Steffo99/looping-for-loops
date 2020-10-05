@@ -8,3 +8,4 @@
 script = ExtResource( 1 )
 color = Color( 0.447059, 0.333333, 1, 1 )
 icon = ExtResource( 3 )
+[connection signal="clicked" from="." to="." method="_on_CBSpeedChangeButton_clicked"]

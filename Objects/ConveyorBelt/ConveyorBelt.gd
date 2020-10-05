@@ -23,3 +23,10 @@ func get_relative_cb_speed(other_pos: Vector2):
 	var relative_position = other_pos - position
 	var speed_sign = sign(relative_position.dot(Vector2.UP.rotated(rotation)))
 	return speed_sign * cb_speed
+
+
+func _process(delta):
+	if Input.is_action_just_pressed("cheat_slower"):
+		set_cb_speed(cb_speed - 50)
+	if Input.is_action_just_pressed("cheat_faster"):
+		set_cb_speed(cb_speed + 50)

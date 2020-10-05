@@ -1,4 +1,5 @@
 extends Node2D
+class_name Laser
 
 
 export(bool) var is_active: bool = true setget set_active

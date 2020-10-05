@@ -1,19 +1,29 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Objects/SpecialObjects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/SpecialObjects/Conductor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/ConveyorBelt/ConveyorBelt.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/SpecialObjects/SingleScreenWalls.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/SpecialObjects/Wrapper.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/Levels/BuzzsawChoice.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ScrollingObjects/CrossLoop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/ScrollingObjects/WinDoor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/SpecialObjects/UI/LoopCountPanel.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/SpecialObjects/UI/LoopCountPanel.gd" type="Script" id=9]
 [ext_resource path="res://Objects/SpecialObjects/Clock.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/Laser.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/Levels/Intro.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/ScrollingObjects/Background.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Levels/Lasers.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objects/Levels/Toggles.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Objects/ScrollingObjects/Press.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Objects/ScrollingObjects/Buzzsaw.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Sprites/button_right.png" type="Texture" id=19]
+[ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/ScrollingPipesTileMap.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/CBSpeedChangeButton.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingPipe.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Objects/Levels/Tower.tscn" type="PackedScene" id=24]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.294118 )
@@ -53,11 +63,222 @@ position = Vector2( 140, 660 )
 [node name="Toggles" parent="." instance=ExtResource( 15 )]
 position = Vector2( 2420, 0 )
 
-[node name="Press" parent="." instance=ExtResource( 16 )]
-position = Vector2( 2900, 0 )
+[node name="BuzzsawChoice" type="Node2D" parent="."]
+position = Vector2( 2560, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="BuzzsawChoice" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3480, 0 )
+[node name="Buzzsaw4" parent="BuzzsawChoice" instance=ExtResource( 18 )]
+position = Vector2( 480, 600 )
+
+[node name="Buzzsaw" parent="BuzzsawChoice" instance=ExtResource( 18 )]
+position = Vector2( 600, 600 )
+
+[node name="Buzzsaw2" parent="BuzzsawChoice" instance=ExtResource( 18 )]
+position = Vector2( 720, 600 )
+
+[node name="Buzzsaw3" parent="BuzzsawChoice" instance=ExtResource( 18 )]
+position = Vector2( 840, 600 )
+
+[node name="ScrollingPipe3" parent="BuzzsawChoice" instance=ExtResource( 23 )]
+position = Vector2( 1280, 0 )
+
+[node name="TileMap" parent="BuzzsawChoice/ScrollingPipe3" instance=ExtResource( 21 )]
+tile_data = PoolIntArray( 65513, 0, 65536, 65527, 0, 65536, 131049, 0, 65536, 196585, 0, 65536, 262121, 0, 65536, 327657, 0, 131072, 327658, 0, 65537, 327659, 0, 65537, 327660, 0, 65537, 327661, 0, 65537, 327662, 0, 65537, 327663, 0, 65537, 327664, 0, 65537, 327665, 0, 65537, 327666, 0, 65537, 327667, 0, 65537, 327668, 0, 65537, 327669, 0, 65537, 327670, 0, 65537, 327671, 0, 131073, 851945, 0, 0, 851959, 0, 1, 917481, 0, 65536, 917495, 0, 65536, 983015, 0, 0, 983016, 0, 65537, 983017, 0, 65536, 983031, 0, 65536, 983032, 0, 65537, 983033, 0, 1, 1048551, 0, 65536, 1048553, 0, 65536, 1048567, 0, 65536, 1048569, 0, 65536, 1114087, 0, 65536, 1114089, 0, 65536, 1114103, 0, 65536, 1114105, 0, 65536 )
+
+[node name="GhostGroup" parent="BuzzsawChoice" instance=ExtResource( 17 )]
+position = Vector2( 420, 500 )
+
+[node name="GhostBlock" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+is_active = false
+
+[node name="GhostBlock2" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 40, 0 )
+is_active = false
+
+[node name="GhostBlock3" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 80, 0 )
+is_active = false
+
+[node name="GhostBlock4" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 120, 0 )
+is_active = false
+
+[node name="GhostBlock5" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 160, 0 )
+is_active = false
+
+[node name="GhostBlock6" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 200, 0 )
+is_active = false
+
+[node name="GhostBlock7" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 240, 0 )
+is_active = false
+
+[node name="GhostBlock8" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 280, 0 )
+is_active = false
+
+[node name="GhostBlock9" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 320, 0 )
+is_active = false
+
+[node name="GhostBlock10" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 360, 0 )
+is_active = false
+
+[node name="GhostBlock11" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 400, 0 )
+is_active = false
+
+[node name="GhostBlock12" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 440, 0 )
+is_active = false
+
+[node name="GhostBlock13" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+position = Vector2( 480, 0 )
+is_active = false
+
+[node name="GhostGroup2" parent="BuzzsawChoice" instance=ExtResource( 17 )]
+
+[node name="GhostBlock" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+position = Vector2( 980, 460 )
+is_active = false
+
+[node name="GhostBlock2" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+position = Vector2( 1020, 420 )
+is_active = false
+
+[node name="GhostBlock3" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+position = Vector2( 1060, 380 )
+is_active = false
+
+[node name="GhostBlock4" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+position = Vector2( 1100, 340 )
+is_active = false
+
+[node name="GhostBlock5" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+position = Vector2( 1140, 300 )
+is_active = false
+
+[node name="GhostBlock6" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+position = Vector2( 1180, 260 )
+is_active = false
+
+[node name="GhostBlock7" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+position = Vector2( 1220, 220 )
+is_active = false
+
+[node name="GhostBlock8" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+position = Vector2( 1260, 180 )
+is_active = false
+
+[node name="CBSpeedChangeButton" parent="BuzzsawChoice" instance=ExtResource( 22 )]
+position = Vector2( 340, 620 )
+color = Color( 0.7, 1, 0.7, 1 )
+icon = ExtResource( 19 )
+change = 20.0
+
+[node name="Background" parent="BuzzsawChoice" instance=ExtResource( 13 )]
+
+[node name="CrossLoop" parent="BuzzsawChoice" instance=ExtResource( 6 )]
+position = Vector2( 440, 120 )
+
+[node name="CrossLoop2" parent="BuzzsawChoice" instance=ExtResource( 6 )]
+position = Vector2( 660, 120 )
+
+[node name="CrossLoop3" parent="BuzzsawChoice" instance=ExtResource( 6 )]
+position = Vector2( 880, 120 )
+
+[node name="LongJump" type="Node2D" parent="."]
+position = Vector2( 3840, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background" parent="LongJump" instance=ExtResource( 13 )]
+
+[node name="Buzzsaw" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 120, 600 )
+
+[node name="Buzzsaw2" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 240, 600 )
+
+[node name="Buzzsaw3" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 360, 600 )
+
+[node name="Buzzsaw4" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 480, 600 )
+
+[node name="Buzzsaw5" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 600, 600 )
+
+[node name="Buzzsaw6" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 720, 600 )
+
+[node name="Buzzsaw7" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 840, 600 )
+
+[node name="Buzzsaw8" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 960, 600 )
+
+[node name="Buzzsaw9" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 1080, 600 )
+
+[node name="Buzzsaw10" parent="LongJump" instance=ExtResource( 18 )]
+position = Vector2( 1200, 600 )
+
+[node name="ScrollingPipe" parent="LongJump" instance=ExtResource( 23 )]
+position = Vector2( 1280, 0 )
+
+[node name="TileMap" parent="LongJump/ScrollingPipe" instance=ExtResource( 21 )]
+tile_data = PoolIntArray( 327648, 0, 65537, 327649, 0, 65537, 327650, 0, 65537, 327651, 0, 65537, 327652, 0, 65537, 327653, 0, 65537, 327654, 0, 65537, 327655, 0, 65537, 327656, 0, 65537, 327657, 0, 65537, 327658, 0, 65537, 327659, 0, 65537, 327660, 0, 65537, 327661, 0, 65537, 327662, 0, 65537, 327663, 0, 65537, 327664, 0, 65537, 327665, 0, 65537, 327666, 0, 65537, 327667, 0, 65537, 327668, 0, 65537, 327669, 0, 65537, 327670, 0, 65537, 327671, 0, 65537, 327672, 0, 65537, 327673, 0, 65537, 327674, 0, 65537, 327675, 0, 65537, 327676, 0, 65537, 327677, 0, 65537, 327678, 0, 65537, 327679, 0, 65537, 917472, 0, 65536, 917503, 0, 65536, 983008, 0, 65536, 983038, 0, 0, 983039, 0, 131073, 1048544, 0, 65536, 1048574, 0, 131072, 1048575, 0, 1, 1114080, 0, 65536, 1114111, 0, 65536 )
+
+[node name="GhostGroup" parent="LongJump" instance=ExtResource( 17 )]
+
+[node name="CBSpeedChangeButton" parent="LongJump/GhostGroup" instance=ExtResource( 22 )]
+position = Vector2( 1260, 500 )
+change = -300.0
+
+[node name="CBSpeedChangeButton2" parent="LongJump/GhostGroup" instance=ExtResource( 22 )]
+position = Vector2( 1220, 500 )
+change = -300.0
+
+[node name="CBSpeedChangeButton3" parent="LongJump/GhostGroup" instance=ExtResource( 22 )]
+position = Vector2( 1180, 500 )
+change = -300.0
+
+[node name="GhostGroup2" parent="LongJump" instance=ExtResource( 17 )]
+position = Vector2( -1160, 0 )
+
+[node name="CBSpeedChangeButton" parent="LongJump/GhostGroup2" instance=ExtResource( 22 )]
+position = Vector2( 1260, 500 )
+color = Color( 0, 1, 0.376471, 1 )
+icon = ExtResource( 19 )
+change = 300.0
+
+[node name="CBSpeedChangeButton2" parent="LongJump/GhostGroup2" instance=ExtResource( 22 )]
+position = Vector2( 1220, 500 )
+color = Color( 0, 1, 0.376471, 1 )
+icon = ExtResource( 19 )
+change = 300.0
+
+[node name="CBSpeedChangeButton3" parent="LongJump/GhostGroup2" instance=ExtResource( 22 )]
+position = Vector2( 1180, 500 )
+color = Color( 0, 1, 0.376471, 1 )
+icon = ExtResource( 19 )
+change = 300.0
+
+[node name="Loop6" parent="LongJump" instance=ExtResource( 20 )]
+position = Vector2( 1180, 460 )
+
+[node name="Loop9" parent="LongJump" instance=ExtResource( 20 )]
+position = Vector2( 100, 460 )
+
+[node name="CrossLoop2" parent="LongJump" instance=ExtResource( 6 )]
+position = Vector2( 660, 280 )
 
 [node name="WinDoor" parent="." instance=ExtResource( 7 )]
 position = Vector2( 740, 680 )
@@ -67,5 +288,45 @@ margin_left = 120.0
 margin_right = 220.0
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 9 )
+
+[node name="Tower" parent="." instance=ExtResource( 24 )]
+position = Vector2( 7700, 0 )
+
+[node name="Lasers" parent="." instance=ExtResource( 14 )]
+position = Vector2( 5120, 0 )
+
+[node name="Loop" parent="." instance=ExtResource( 20 )]
+position = Vector2( 3980, 140 )
+
+[node name="Loop2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 4180, 140 )
+
+[node name="Loop3" parent="." instance=ExtResource( 20 )]
+position = Vector2( 4380, 140 )
+
+[node name="Loop4" parent="." instance=ExtResource( 20 )]
+position = Vector2( 4580, 140 )
+
+[node name="Loop5" parent="." instance=ExtResource( 20 )]
+position = Vector2( 4780, 140 )
+
+[node name="Loop6" parent="." instance=ExtResource( 20 )]
+position = Vector2( 4980, 140 )
 [connection signal="loop_collected" from="Player" to="LoopCountPanel" method="_on_Player_loop_collected"]
+[connection signal="clicked" from="BuzzsawChoice/CBSpeedChangeButton" to="BuzzsawChoice/GhostGroup" method="toggle"]
+[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton" to="LongJump/GhostGroup" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton" to="LongJump/GhostGroup/CBSpeedChangeButton" method="_on_GameButton_clicked"]
+[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton2" to="LongJump/GhostGroup" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton2" to="LongJump/GhostGroup/CBSpeedChangeButton2" method="_on_GameButton_clicked"]
+[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton3" to="LongJump/GhostGroup" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton3" to="LongJump/GhostGroup/CBSpeedChangeButton3" method="_on_GameButton_clicked"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="BuzzsawChoice/GhostGroup2" method="activate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="LongJump/GhostGroup2" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="LongJump/GhostGroup2/CBSpeedChangeButton" method="_on_GameButton_clicked"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="BuzzsawChoice/GhostGroup2" method="activate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="LongJump/GhostGroup2" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="LongJump/GhostGroup2/CBSpeedChangeButton2" method="_on_GameButton_clicked"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="BuzzsawChoice/GhostGroup2" method="activate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="LongJump/GhostGroup2" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="LongJump/GhostGroup2/CBSpeedChangeButton3" method="_on_GameButton_clicked"]
 [connection signal="body_entered" from="WinDoor" to="Player" method="_on_WinDoor_body_entered"]

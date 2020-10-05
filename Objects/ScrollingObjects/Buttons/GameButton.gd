@@ -46,8 +46,5 @@ func set_icon(value):
 
 func _on_GameButton_input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int):
 	if is_active and event.is_pressed():
+		deactivate()
 		emit_signal("clicked")
-
-
-func _on_GameButton_clicked():
-	deactivate()

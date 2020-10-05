@@ -45,9 +45,24 @@ _global_script_classes=[ {
 "path": "res://Objects/ScrollingObjects/Buttons/GameButton.gd"
 }, {
 "base": "Node2D",
+"class": "GameButtonChain",
+"language": "GDScript",
+"path": "res://Objects/ScrollingObjects/Buttons/GameButtonChain.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "GhostBlock",
 "language": "GDScript",
 "path": "res://Objects/ScrollingObjects/Ghosts/GhostBlock.gd"
+}, {
+"base": "Node2D",
+"class": "GhostGroup",
+"language": "GDScript",
+"path": "res://Objects/ScrollingObjects/Ghosts/GhostGroup.gd"
+}, {
+"base": "Node2D",
+"class": "Laser",
+"language": "GDScript",
+"path": "res://Objects/Laser.gd"
 }, {
 "base": "Area2D",
 "class": "Loop",
@@ -102,7 +117,10 @@ _global_script_class_icons={
 "ConveyorBelt": "",
 "ConveyorScrollParent": "",
 "GameButton": "",
+"GameButtonChain": "",
 "GhostBlock": "",
+"GhostGroup": "",
+"Laser": "",
 "Loop": "",
 "LoopCountPanel": "",
 "Menu": "",
@@ -119,6 +137,10 @@ _global_script_class_icons={
 config/name="Looping for Lööps"
 run/main_scene="res://Objects/Menu.tscn"
 config/icon="res://Sprites/clock.png"
+
+[debug]
+
+settings/stdout/print_fps=true
 
 [display]
 
@@ -145,6 +167,16 @@ plr_right={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+cheat_faster={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777250,"unicode":0,"echo":false,"script":null)
+ ]
+}
+cheat_slower={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777249,"unicode":0,"echo":false,"script":null)
  ]
 }
 

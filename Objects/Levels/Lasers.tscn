@@ -1,0 +1,119 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingLaser.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ScrollingObjects/Background.tscn" type="PackedScene" id=7]
+
+[node name="Lasers" type="Node2D"]
+
+[node name="GameButton" parent="." instance=ExtResource( 3 )]
+position = Vector2( 200, 660 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="ScrollingBlock" parent="." instance=ExtResource( 2 )]
+position = Vector2( 200, 460 )
+
+[node name="ScrollingBlock2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 240, 500 )
+
+[node name="ScrollingBlock3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 500 )
+
+[node name="GameButton2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 480, 660 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="ScrollingBlock4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 480, 460 )
+
+[node name="ScrollingBlock5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 520, 500 )
+
+[node name="ScrollingBlock6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 440, 500 )
+
+[node name="GhostGroup" parent="." instance=ExtResource( 4 )]
+position = Vector2( 760, 460 )
+
+[node name="GhostBlock" parent="GhostGroup" instance=ExtResource( 5 )]
+is_active = false
+
+[node name="GhostBlock2" parent="GhostGroup" instance=ExtResource( 5 )]
+position = Vector2( -40, 40 )
+is_active = false
+
+[node name="GhostBlock3" parent="GhostGroup" instance=ExtResource( 5 )]
+position = Vector2( 40, 40 )
+is_active = false
+
+[node name="Loop" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160, 460 )
+
+[node name="Loop2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 200, 420 )
+
+[node name="Loop3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 240, 460 )
+
+[node name="Loop4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 440, 460 )
+
+[node name="Loop5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 480, 420 )
+
+[node name="Loop6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 520, 460 )
+
+[node name="Loop7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 720, 460 )
+
+[node name="Loop8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 800, 460 )
+
+[node name="GameButton3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 760, 660 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="GhostGroup2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1040, 460 )
+
+[node name="GhostBlock" parent="GhostGroup2" instance=ExtResource( 5 )]
+
+[node name="GhostBlock2" parent="GhostGroup2" instance=ExtResource( 5 )]
+position = Vector2( -40, 40 )
+
+[node name="GhostBlock3" parent="GhostGroup2" instance=ExtResource( 5 )]
+position = Vector2( 40, 40 )
+
+[node name="Loop9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1000, 460 )
+
+[node name="Loop10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1080, 460 )
+
+[node name="GameButton4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1040, 660 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Background" parent="." instance=ExtResource( 7 )]
+
+[node name="ScrollingLaser" parent="." instance=ExtResource( 1 )]
+position = Vector2( 200, 140 )
+
+[node name="ScrollingLaser2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 480, 140 )
+is_active = false
+
+[node name="ScrollingLaser3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 760, 140 )
+
+[node name="ScrollingLaser4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1040, 140 )
+[connection signal="clicked" from="GameButton" to="ScrollingLaser" method="toggle"]
+[connection signal="clicked" from="GameButton2" to="ScrollingLaser2" method="toggle"]
+[connection signal="clicked" from="GameButton3" to="GhostGroup" method="toggle"]
+[connection signal="clicked" from="GameButton4" to="GhostGroup2" method="deactivate"]

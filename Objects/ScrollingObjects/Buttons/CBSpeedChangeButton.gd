@@ -9,6 +9,5 @@ func _ready():
 	conveyor_belt = get_tree().current_scene.get_node("ConveyorBelt")
 
 
-func _on_GameButton_clicked():
-	._on_GameButton_clicked()
+func _on_CBSpeedChangeButton_clicked():
 	conveyor_belt.cb_speed += change
