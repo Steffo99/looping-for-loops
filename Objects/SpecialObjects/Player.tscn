@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Gatto/Donut.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Objects/SpecialObjects/Player.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Gatto/Body.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Sprites/Gatto/Legs.tres" type="SpriteFrames" id=4]
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 19, 19 )
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 18, 18 )
+extents = Vector2( 17, 17 )
 
 [node name="Player" type="KinematicBody2D"]
+z_index = 1
 collision_layer = 2
 collision_mask = 2147483677
 script = ExtResource( 2 )
@@ -16,7 +20,7 @@ jump_speed = 493.0
 
 [node name="Body" type="AnimatedSprite" parent="."]
 frames = ExtResource( 3 )
-animation = "up"
+animation = "neutral"
 playing = true
 
 [node name="Donut" type="AnimatedSprite" parent="."]
@@ -32,4 +36,13 @@ animation = "neutral"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+input_pickable = false
+collision_layer = 2
+collision_mask = 29
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

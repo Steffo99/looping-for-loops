@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/WrapParent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/ConveyorScrollParent.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/exit.png" type="Texture" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 29.9249
+height = 104.953
+
+[node name="WinDoor" type="Area2D"]
+z_index = -1
+input_pickable = false
+collision_layer = 2147483712
+collision_mask = 2
+
+[node name="ConveyorScrollParent" parent="." instance=ExtResource( 2 )]
+
+[node name="WrapParent" parent="." instance=ExtResource( 1 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -45 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

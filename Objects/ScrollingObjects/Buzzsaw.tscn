@@ -25,6 +25,8 @@ tracks/0/keys = {
 }
 
 [node name="Buzzsaw" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -43,3 +45,4 @@ anims/SpinClockwise = SubResource( 2 )
 
 [node name="WrapParent" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 0 )
+[connection signal="body_entered" from="." to="." method="_on_Buzzsaw_body_entered"]

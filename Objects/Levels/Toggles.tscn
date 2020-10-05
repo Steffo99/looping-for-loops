@@ -1,218 +1,123 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Tilesets/Pipes.tres" type="TileSet" id=1]
-[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.gd" type="Script" id=2]
-[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.gd" type="Script" id=3]
 [ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.gd" type="Script" id=7]
-[ext_resource path="res://Objects/ScrollingObjects/Loop.gd" type="Script" id=8]
 [ext_resource path="res://Objects/ScrollingObjects/Utilities/ScrollingPipesTileMap.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Objects/ScrollingObjects/ScrollingPipe.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.tscn" type="PackedScene" id=11]
 
 [node name="Toggles" type="Node2D"]
-position = Vector2( 2400, 0 )
+position = Vector2( 1140, 0 )
 
-[node name="ScrollingPipe2" type="KinematicBody2D" parent="." instance=ExtResource( 10 )]
-collision_layer = 8
-collision_mask = 2
-motion/sync_to_physics = true
+[node name="ScrollingPipe2" parent="." instance=ExtResource( 10 )]
 
-[node name="TileMap" type="TileMap" parent="ScrollingPipe2" instance=ExtResource( 9 )]
-tile_set = ExtResource( 1 )
-cell_size = Vector2( 40, 40 )
-cell_quadrant_size = 40
-collision_use_kinematic = true
-collision_layer = 8
-collision_mask = 2
-format = 1
+[node name="TileMap" parent="ScrollingPipe2" instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 720877, 0, 65536, 720881, 0, 65536, 720885, 0, 65536, 720889, 0, 0, 720890, 0, 65537, 720891, 0, 65537, 720892, 0, 65537, 720893, 0, 1, 786413, 0, 65536, 786417, 0, 65536, 786421, 0, 65536, 786425, 0, 65536, 786429, 0, 65536, 851948, 0, 0, 851949, 0, 131073, 851953, 0, 65536, 851957, 0, 65536, 851961, 0, 65536, 851965, 0, 65536, 917483, 0, 0, 917484, 0, 131073, 917489, 0, 65536, 917493, 0, 65536, 917497, 0, 65536, 917501, 0, 65536, 983018, 0, 0, 983019, 0, 131073, 983025, 0, 65536, 983029, 0, 65536, 983033, 0, 65536, 983037, 0, 65536, 1048553, 0, 0, 1048554, 0, 131073, 1114088, 0, 0, 1114089, 0, 131073 )
 
-[node name="Loop5" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop5" parent="." instance=ExtResource( 4 )]
 position = Vector2( -580, 380 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop6" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop6" parent="." instance=ExtResource( 4 )]
 position = Vector2( -420, 380 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop7" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop7" parent="." instance=ExtResource( 4 )]
 position = Vector2( -260, 380 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop17" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop17" parent="." instance=ExtResource( 4 )]
 position = Vector2( -100, 380 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop9" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop9" parent="." instance=ExtResource( 4 )]
 position = Vector2( -740, 380 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="GhostGroup2" type="Node2D" parent="." instance=ExtResource( 6 )]
+[node name="GhostGroup2" parent="." instance=ExtResource( 6 )]
 position = Vector2( -700, 420 )
-script = ExtResource( 3 )
 
-[node name="GameButton" type="Area2D" parent="GhostGroup2" instance=ExtResource( 5 )]
+[node name="GameButton" parent="GhostGroup2" instance=ExtResource( 5 )]
 position = Vector2( 200, -160 )
-collision_layer = 8
-collision_mask = 2147483648
-script = ExtResource( 7 )
 
-[node name="GameButton2" type="Area2D" parent="GhostGroup2" instance=ExtResource( 5 )]
+[node name="GameButton2" parent="GhostGroup2" instance=ExtResource( 5 )]
 position = Vector2( 560, 160 )
-collision_layer = 8
-collision_mask = 2147483648
-script = ExtResource( 7 )
 is_active = false
 
-[node name="GhostBlock" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
-script = ExtResource( 2 )
+[node name="GhostBlock" parent="GhostGroup2" instance=ExtResource( 11 )]
 
-[node name="GhostBlock2" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock2" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 40, 0 )
-script = ExtResource( 2 )
 
-[node name="GhostBlock3" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock3" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 80, 0 )
-script = ExtResource( 2 )
 
-[node name="GhostBlock4" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock4" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 160, 0 )
-script = ExtResource( 2 )
 
-[node name="GhostBlock5" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock5" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 200, 0 )
-script = ExtResource( 2 )
 
-[node name="GhostBlock6" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock6" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 240, 0 )
-script = ExtResource( 2 )
 
-[node name="GhostBlock7" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock7" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 320, 0 )
-script = ExtResource( 2 )
 
-[node name="GhostBlock8" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock8" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 360, 0 )
-script = ExtResource( 2 )
 
-[node name="GhostBlock9" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock9" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 400, 0 )
-script = ExtResource( 2 )
 
-[node name="GhostBlock10" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock10" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 120, 200 )
-script = ExtResource( 2 )
 is_active = false
 
-[node name="GhostBlock11" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock11" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 120, 240 )
-script = ExtResource( 2 )
 is_active = false
 
-[node name="GhostBlock12" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock12" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 280, 200 )
-script = ExtResource( 2 )
 is_active = false
 
-[node name="GhostBlock13" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock13" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 280, 240 )
-script = ExtResource( 2 )
 is_active = false
 
-[node name="GhostBlock14" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock14" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 440, 200 )
-script = ExtResource( 2 )
 is_active = false
 
-[node name="GhostBlock15" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock15" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 440, 240 )
-script = ExtResource( 2 )
 is_active = false
 
-[node name="GhostBlock16" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock16" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 600, 200 )
-script = ExtResource( 2 )
 
-[node name="GhostBlock17" type="StaticBody2D" parent="GhostGroup2" instance=ExtResource( 11 )]
+[node name="GhostBlock17" parent="GhostGroup2" instance=ExtResource( 11 )]
 position = Vector2( 600, 240 )
-script = ExtResource( 2 )
 
-[node name="Loop10" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop10" parent="." instance=ExtResource( 4 )]
 position = Vector2( -720, 620 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop11" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop11" parent="." instance=ExtResource( 4 )]
 position = Vector2( -700, 640 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop12" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop12" parent="." instance=ExtResource( 4 )]
 position = Vector2( -680, 620 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop13" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop13" parent="." instance=ExtResource( 4 )]
 position = Vector2( -680, 660 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop8" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop8" parent="." instance=ExtResource( 4 )]
 position = Vector2( -720, 660 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop14" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop14" parent="." instance=ExtResource( 4 )]
 position = Vector2( -340, 660 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop15" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop15" parent="." instance=ExtResource( 4 )]
 position = Vector2( -500, 660 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
 
-[node name="Loop16" type="Area2D" parent="." instance=ExtResource( 4 )]
+[node name="Loop16" parent="." instance=ExtResource( 4 )]
 position = Vector2( -180, 660 )
-collision_layer = 32
-collision_mask = 2
-script = ExtResource( 8 )
-[connection signal="body_entered" from="Loop5" to="Loop5" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop6" to="Loop6" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop7" to="Loop7" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop17" to="Loop17" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop9" to="Loop9" method="_on_Loop_body_entered"]
 [connection signal="clicked" from="GhostGroup2/GameButton" to="GhostGroup2" method="toggle"]
-[connection signal="clicked" from="GhostGroup2/GameButton" to="GhostGroup2/GameButton" method="_on_GameButton_clicked"]
-[connection signal="input_event" from="GhostGroup2/GameButton" to="GhostGroup2/GameButton" method="_on_GameButton_input_event"]
 [connection signal="clicked" from="GhostGroup2/GameButton2" to="GhostGroup2" method="toggle"]
-[connection signal="clicked" from="GhostGroup2/GameButton2" to="GhostGroup2/GameButton2" method="_on_GameButton_clicked"]
-[connection signal="input_event" from="GhostGroup2/GameButton2" to="GhostGroup2/GameButton2" method="_on_GameButton_input_event"]
-[connection signal="body_entered" from="Loop10" to="Loop10" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop11" to="Loop11" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop12" to="Loop12" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop13" to="Loop13" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop8" to="Loop8" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop14" to="Loop14" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop15" to="Loop15" method="_on_Loop_body_entered"]
-[connection signal="body_entered" from="Loop16" to="Loop16" method="_on_Loop_body_entered"]

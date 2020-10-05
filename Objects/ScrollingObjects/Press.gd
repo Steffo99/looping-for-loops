@@ -22,3 +22,7 @@ func _subbeat(subbeat_num):
 		$AnimationPlayer.play("Stomp")
 	elif (subbeat_num - subbeat_offset) % 48 == 24:
 		$AnimationPlayer.play_backwards("Stomp")
+
+
+func _on_StompArea_body_entered(body):
+	body.die()

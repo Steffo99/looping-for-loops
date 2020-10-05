@@ -21,6 +21,7 @@ tracks/0/keys = {
 }
 
 [node name="Clock" type="Node2D"]
+z_index = 5
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

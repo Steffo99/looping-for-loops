@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Objects/SpecialObjects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/SpecialObjects/Conductor.tscn" type="PackedScene" id=2]
@@ -6,11 +6,21 @@
 [ext_resource path="res://Objects/SpecialObjects/SingleScreenWalls.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/SpecialObjects/Wrapper.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Levels/BuzzsawChoice.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ScrollingObjects/WinDoor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/SpecialObjects/UI/LoopCountPanel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/SpecialObjects/UI/LoopCountPanel.gd" type="Script" id=9]
 [ext_resource path="res://Objects/SpecialObjects/Clock.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/Laser.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/Levels/Intro.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/Levels/Toggles.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Objects/ScrollingObjects/Press.tscn" type="PackedScene" id=16]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.294118 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Main" type="Node2D"]
 __meta__ = {
@@ -41,8 +51,21 @@ position = Vector2( 140, 660 )
 [node name="Intro" parent="." instance=ExtResource( 12 )]
 
 [node name="Toggles" parent="." instance=ExtResource( 15 )]
+position = Vector2( 2420, 0 )
 
 [node name="Press" parent="." instance=ExtResource( 16 )]
 position = Vector2( 2900, 0 )
 
 [node name="BuzzsawChoice" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3480, 0 )
+
+[node name="WinDoor" parent="." instance=ExtResource( 7 )]
+position = Vector2( 740, 680 )
+
+[node name="LoopCountPanel" parent="." instance=ExtResource( 8 )]
+margin_left = 120.0
+margin_right = 220.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 9 )
+[connection signal="loop_collected" from="Player" to="LoopCountPanel" method="_on_Player_loop_collected"]
+[connection signal="body_entered" from="WinDoor" to="Player" method="_on_WinDoor_body_entered"]

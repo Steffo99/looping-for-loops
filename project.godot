@@ -54,6 +54,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Objects/ScrollingObjects/Loop.gd"
 }, {
+"base": "Panel",
+"class": "LoopCountPanel",
+"language": "GDScript",
+"path": "res://Objects/SpecialObjects/UI/LoopCountPanel.gd"
+}, {
 "base": "Control",
 "class": "Menu",
 "language": "GDScript",
@@ -99,6 +104,7 @@ _global_script_class_icons={
 "GameButton": "",
 "GhostBlock": "",
 "Loop": "",
+"LoopCountPanel": "",
 "Menu": "",
 "Player": "",
 "Press": "",
@@ -110,7 +116,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="ld47"
+config/name="Looping for Lööps"
 run/main_scene="res://Objects/Menu.tscn"
 config/icon="res://Sprites/clock.png"
 
@@ -151,6 +157,7 @@ plr_right={
 2d_physics/layer_4="Obstacles"
 2d_physics/layer_5="Screen Walls"
 2d_physics/layer_6="Lööps"
+2d_physics/layer_7="Win Door"
 
 [rendering]
 

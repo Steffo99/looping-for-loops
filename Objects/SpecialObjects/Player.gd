@@ -1,7 +1,6 @@
 extends KinematicBody2D
 class_name Player
 
-
 var rng = RandomNumberGenerator.new()
 
 
@@ -17,6 +16,8 @@ var can_jump: bool = false
 var jump_buffer: int = 0
 var is_quick_falling: bool = false
 var quick_fall_buffer: int = 0
+
+signal loop_collected(loops)
 var loops_collected: int = 0
 
 func get_floor():
@@ -29,6 +30,7 @@ func get_floor():
 
 func _ready():
 	$Donut.self_modulate = Color.from_hsv(rng.randf_range(0.0, 1.0), 0.4, 1)
+	emit_signal("loop_collected", loops_collected)
 
 func up_normal():
 	return -gravity.normalized()
@@ -122,3 +124,20 @@ func _physics_process(_delta):
 		movement += Vector2.RIGHT * move_speed
 	
 	move_and_slide(movement, up_normal)
+
+
+func win():
+	print("YOU WIN!")
+	print("You collected %s loops." % loops_collected)
+
+func die():
+	print("YOU DIED")
+	print("You collected %s loops." % loops_collected)
+
+
+func _on_WinDoor_body_entered(body):
+	win()
+
+
+func _on_Area2D_body_entered(body):
+	die()

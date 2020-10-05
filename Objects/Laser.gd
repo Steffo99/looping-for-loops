@@ -29,3 +29,7 @@ func _physics_process(delta):
 	$Beam/End.global_position = point
 	$Beam/RecreatingRectangleShape.shape.extents.y = (length / 2) + 10
 	$Beam/RecreatingRectangleShape.position.y = (length / 2) - 5
+
+
+func _on_Beam_body_entered(body):
+	body.die()

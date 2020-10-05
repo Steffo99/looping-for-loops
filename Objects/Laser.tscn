@@ -6,11 +6,12 @@
 [ext_resource path="res://Sprites/laser_beam_continuous.png" type="Texture" id=4]
 [ext_resource path="res://Objects/ScrollingObjects/Utilities/RecreatingRectangleShape.tscn" type="PackedScene" id=5]
 
-
 [node name="Laser" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Beam" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
 
 [node name="Raycast" type="RayCast2D" parent="Beam"]
 visible = false
@@ -41,3 +42,4 @@ centered = false
 [node name="Sprite" type="Sprite" parent="Gun"]
 position = Vector2( 0, -40 )
 texture = ExtResource( 1 )
+[connection signal="body_entered" from="Beam" to="." method="_on_Beam_body_entered"]
