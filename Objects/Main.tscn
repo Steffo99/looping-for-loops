@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Objects/SpecialObjects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/SpecialObjects/Conductor.tscn" type="PackedScene" id=2]
@@ -11,11 +11,11 @@
 [ext_resource path="res://Objects/SpecialObjects/UI/LoopCountPanel.gd" type="Script" id=9]
 [ext_resource path="res://Objects/SpecialObjects/Clock.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Objects/Laser.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Objects/Levels/Intro.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingBlock.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Objects/ScrollingObjects/Background.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/Levels/Lasers.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Objects/Levels/Toggles.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/ScrollingObjects/Press.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Objects/ScrollingObjects/Buzzsaw.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Sprites/button_right.png" type="Texture" id=19]
@@ -23,7 +23,14 @@
 [ext_resource path="res://Objects/ScrollingObjects/Utilities/ScrollingPipesTileMap.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Objects/ScrollingObjects/Buttons/CBSpeedChangeButton.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Objects/ScrollingObjects/ScrollingPipe.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Objects/Levels/Tower.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Sprites/wall-clocks.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/wall-furnace.png" type="Texture" id=26]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButtonChain.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingLaser.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Objects/Levels/Bridge.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Objects/Levels/max_level_2.tscn" type="PackedScene" id=31]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.294118 )
@@ -41,7 +48,13 @@ __meta__ = {
 song_bpm = 60.0
 
 [node name="Wrapper" parent="." instance=ExtResource( 5 )]
-total_length = 10000.0
+position = Vector2( 14080, 0 )
+
+[node name="LoopCountPanel" parent="." instance=ExtResource( 8 )]
+margin_left = 120.0
+margin_right = 220.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 9 )
 
 [node name="SingleScreenWalls" parent="." instance=ExtResource( 4 )]
 
@@ -58,16 +71,57 @@ position = Vector2( 40, 40 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 140, 660 )
 
-[node name="Intro" parent="." instance=ExtResource( 12 )]
+[node name="Intro" type="Node2D" parent="."]
+
+[node name="ScrollingPipe" parent="Intro" instance=ExtResource( 23 )]
+position = Vector2( 1300, -20 )
+
+[node name="TileMap" parent="Intro/ScrollingPipe" instance=ExtResource( 21 )]
+position = Vector2( -1140, 660 )
+tile_data = PoolIntArray( -393205, 0, 0, -393204, 0, 65537, -393200, 0, 65537, -393199, 0, 1, -327669, 0, 65536, -327663, 0, 65536, -262133, 0, 65536, -262127, 0, 65536, -196597, 0, 65536, -196591, 0, 65536, -131065, 0, 0, -131064, 0, 65537, -131063, 0, 65537, -131062, 0, 65537, -131061, 0, 131073, -131055, 0, 131072, -131054, 0, 65537, -131053, 0, 65537, -131052, 0, 65537, -131051, 0, 1, -65534, 0, 0, -65533, 0, 65537, -65532, 0, 1, -65529, 0, 65536, -65515, 0, 65536, 2, 0, 65536, 4, 0, 65536, 7, 0, 65536, 21, 0, 65536 )
+
+[node name="CBSpeedChangeButton" parent="Intro" instance=ExtResource( 22 )]
+position = Vector2( 1260, 660 )
+color = Color( 0, 1, 0.376471, 1 )
+icon = ExtResource( 19 )
+change = 100.0
+
+[node name="Loop" parent="Intro" instance=ExtResource( 20 )]
+position = Vector2( 300, 580 )
+
+[node name="Loop2" parent="Intro" instance=ExtResource( 20 )]
+position = Vector2( 500, 540 )
+
+[node name="Loop3" parent="Intro" instance=ExtResource( 20 )]
+position = Vector2( 740, 380 )
+
+[node name="Loop4" parent="Intro" instance=ExtResource( 20 )]
+position = Vector2( 980, 540 )
+
+[node name="GhostGroup" parent="Intro" instance=ExtResource( 17 )]
+position = Vector2( 740, 420 )
+
+[node name="GhostBlock" parent="Intro/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -40, 0 )
+
+[node name="GhostBlock2" parent="Intro/GhostGroup" instance=ExtResource( 24 )]
+
+[node name="GhostBlock3" parent="Intro/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 40, 0 )
+
+[node name="Background" parent="Intro" instance=ExtResource( 13 )]
+
+[node name="WinDoor" parent="Intro" instance=ExtResource( 7 )]
+position = Vector2( 740, 680 )
+
+[node name="Lasers" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1280, 0 )
 
 [node name="Toggles" parent="." instance=ExtResource( 15 )]
-position = Vector2( 2420, 0 )
+position = Vector2( 3700, 0 )
 
 [node name="BuzzsawChoice" type="Node2D" parent="."]
-position = Vector2( 2560, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 3840, 0 )
 
 [node name="Buzzsaw4" parent="BuzzsawChoice" instance=ExtResource( 18 )]
 position = Vector2( 480, 600 )
@@ -90,88 +144,88 @@ tile_data = PoolIntArray( 65513, 0, 65536, 65527, 0, 65536, 131049, 0, 65536, 19
 [node name="GhostGroup" parent="BuzzsawChoice" instance=ExtResource( 17 )]
 position = Vector2( 420, 500 )
 
-[node name="GhostBlock" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 is_active = false
 
-[node name="GhostBlock2" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock2" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 40, 0 )
 is_active = false
 
-[node name="GhostBlock3" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock3" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 80, 0 )
 is_active = false
 
-[node name="GhostBlock4" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock4" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 120, 0 )
 is_active = false
 
-[node name="GhostBlock5" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock5" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 160, 0 )
 is_active = false
 
-[node name="GhostBlock6" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock6" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 200, 0 )
 is_active = false
 
-[node name="GhostBlock7" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock7" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 240, 0 )
 is_active = false
 
-[node name="GhostBlock8" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock8" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 280, 0 )
 is_active = false
 
-[node name="GhostBlock9" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock9" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 320, 0 )
 is_active = false
 
-[node name="GhostBlock10" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock10" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 360, 0 )
 is_active = false
 
-[node name="GhostBlock11" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock11" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 400, 0 )
 is_active = false
 
-[node name="GhostBlock12" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock12" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 440, 0 )
 is_active = false
 
-[node name="GhostBlock13" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 16 )]
+[node name="GhostBlock13" parent="BuzzsawChoice/GhostGroup" instance=ExtResource( 24 )]
 position = Vector2( 480, 0 )
 is_active = false
 
 [node name="GhostGroup2" parent="BuzzsawChoice" instance=ExtResource( 17 )]
 
-[node name="GhostBlock" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+[node name="GhostBlock" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 24 )]
 position = Vector2( 980, 460 )
 is_active = false
 
-[node name="GhostBlock2" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+[node name="GhostBlock2" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 24 )]
 position = Vector2( 1020, 420 )
 is_active = false
 
-[node name="GhostBlock3" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+[node name="GhostBlock3" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 24 )]
 position = Vector2( 1060, 380 )
 is_active = false
 
-[node name="GhostBlock4" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+[node name="GhostBlock4" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 24 )]
 position = Vector2( 1100, 340 )
 is_active = false
 
-[node name="GhostBlock5" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+[node name="GhostBlock5" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 24 )]
 position = Vector2( 1140, 300 )
 is_active = false
 
-[node name="GhostBlock6" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+[node name="GhostBlock6" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 24 )]
 position = Vector2( 1180, 260 )
 is_active = false
 
-[node name="GhostBlock7" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+[node name="GhostBlock7" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 24 )]
 position = Vector2( 1220, 220 )
 is_active = false
 
-[node name="GhostBlock8" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 16 )]
+[node name="GhostBlock8" parent="BuzzsawChoice/GhostGroup2" instance=ExtResource( 24 )]
 position = Vector2( 1260, 180 )
 is_active = false
 
@@ -182,6 +236,7 @@ icon = ExtResource( 19 )
 change = 20.0
 
 [node name="Background" parent="BuzzsawChoice" instance=ExtResource( 13 )]
+texture = ExtResource( 25 )
 
 [node name="CrossLoop" parent="BuzzsawChoice" instance=ExtResource( 6 )]
 position = Vector2( 440, 120 )
@@ -193,12 +248,10 @@ position = Vector2( 660, 120 )
 position = Vector2( 880, 120 )
 
 [node name="LongJump" type="Node2D" parent="."]
-position = Vector2( 3840, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
+position = Vector2( 5120, 0 )
 
 [node name="Background" parent="LongJump" instance=ExtResource( 13 )]
+texture = ExtResource( 25 )
 
 [node name="Buzzsaw" parent="LongJump" instance=ExtResource( 18 )]
 position = Vector2( 120, 600 )
@@ -234,7 +287,7 @@ position = Vector2( 1200, 600 )
 position = Vector2( 1280, 0 )
 
 [node name="TileMap" parent="LongJump/ScrollingPipe" instance=ExtResource( 21 )]
-tile_data = PoolIntArray( 327648, 0, 65537, 327649, 0, 65537, 327650, 0, 65537, 327651, 0, 65537, 327652, 0, 65537, 327653, 0, 65537, 327654, 0, 65537, 327655, 0, 65537, 327656, 0, 65537, 327657, 0, 65537, 327658, 0, 65537, 327659, 0, 65537, 327660, 0, 65537, 327661, 0, 65537, 327662, 0, 65537, 327663, 0, 65537, 327664, 0, 65537, 327665, 0, 65537, 327666, 0, 65537, 327667, 0, 65537, 327668, 0, 65537, 327669, 0, 65537, 327670, 0, 65537, 327671, 0, 65537, 327672, 0, 65537, 327673, 0, 65537, 327674, 0, 65537, 327675, 0, 65537, 327676, 0, 65537, 327677, 0, 65537, 327678, 0, 65537, 327679, 0, 65537, 917472, 0, 65536, 917503, 0, 65536, 983008, 0, 65536, 983038, 0, 0, 983039, 0, 131073, 1048544, 0, 65536, 1048574, 0, 131072, 1048575, 0, 1, 1114080, 0, 65536, 1114111, 0, 65536 )
+tile_data = PoolIntArray( 65507, 0, 65536, 65512, 0, 65536, 65519, 0, 65536, 65520, 0, 65536, 65527, 0, 65536, 65532, 0, 65536, 131043, 0, 65536, 131048, 0, 65536, 131055, 0, 65536, 131056, 0, 65536, 131063, 0, 65536, 131068, 0, 65536, 196579, 0, 65536, 196584, 0, 65536, 196588, 0, 0, 196591, 0, 131073, 196592, 0, 131072, 196595, 0, 1, 196599, 0, 65536, 196604, 0, 65536, 262124, 0, 65536, 262131, 0, 65536, 327648, 0, 65537, 327649, 0, 65537, 327650, 0, 65537, 327651, 0, 65537, 327652, 0, 65537, 327653, 0, 65537, 327654, 0, 65537, 327655, 0, 65537, 327656, 0, 65537, 327657, 0, 65537, 327658, 0, 65537, 327659, 0, 65537, 327660, 0, 65537, 327661, 0, 65537, 327662, 0, 65537, 327663, 0, 65537, 327664, 0, 65537, 327665, 0, 65537, 327666, 0, 65537, 327667, 0, 65537, 327668, 0, 65537, 327669, 0, 65537, 327670, 0, 65537, 327671, 0, 65537, 327672, 0, 65537, 327673, 0, 65537, 327674, 0, 65537, 327675, 0, 65537, 327676, 0, 65537, 327677, 0, 65537, 327678, 0, 65537, 327679, 0, 65537, 917472, 0, 65536, 917503, 0, 65536, 983008, 0, 65536, 983038, 0, 0, 983039, 0, 131073, 1048544, 0, 65536, 1048574, 0, 131072, 1048575, 0, 1, 1114080, 0, 65536, 1114111, 0, 65536 )
 
 [node name="GhostGroup" parent="LongJump" instance=ExtResource( 17 )]
 
@@ -280,53 +333,525 @@ position = Vector2( 100, 460 )
 [node name="CrossLoop2" parent="LongJump" instance=ExtResource( 6 )]
 position = Vector2( 660, 280 )
 
-[node name="WinDoor" parent="." instance=ExtResource( 7 )]
-position = Vector2( 740, 680 )
+[node name="Loop" parent="LongJump" instance=ExtResource( 20 )]
+position = Vector2( 140, 140 )
 
-[node name="LoopCountPanel" parent="." instance=ExtResource( 8 )]
-margin_left = 120.0
-margin_right = 220.0
-custom_styles/panel = SubResource( 1 )
-script = ExtResource( 9 )
+[node name="Loop2" parent="LongJump" instance=ExtResource( 20 )]
+position = Vector2( 340, 140 )
 
-[node name="Tower" parent="." instance=ExtResource( 24 )]
-position = Vector2( 7700, 0 )
+[node name="Loop3" parent="LongJump" instance=ExtResource( 20 )]
+position = Vector2( 540, 140 )
 
-[node name="Lasers" parent="." instance=ExtResource( 14 )]
-position = Vector2( 5120, 0 )
+[node name="Loop4" parent="LongJump" instance=ExtResource( 20 )]
+position = Vector2( 740, 140 )
 
-[node name="Loop" parent="." instance=ExtResource( 20 )]
-position = Vector2( 3980, 140 )
+[node name="Loop5" parent="LongJump" instance=ExtResource( 20 )]
+position = Vector2( 940, 140 )
 
-[node name="Loop2" parent="." instance=ExtResource( 20 )]
-position = Vector2( 4180, 140 )
+[node name="Loop7" parent="LongJump" instance=ExtResource( 20 )]
+position = Vector2( 1140, 140 )
 
-[node name="Loop3" parent="." instance=ExtResource( 20 )]
-position = Vector2( 4380, 140 )
+[node name="Tower" type="Node2D" parent="."]
+position = Vector2( 7680, 0 )
 
-[node name="Loop4" parent="." instance=ExtResource( 20 )]
-position = Vector2( 4580, 140 )
+[node name="Background" parent="Tower" instance=ExtResource( 13 )]
+texture = ExtResource( 26 )
 
-[node name="Loop5" parent="." instance=ExtResource( 20 )]
-position = Vector2( 4780, 140 )
+[node name="ScrollingPipe" parent="Tower" instance=ExtResource( 23 )]
+position = Vector2( 1280, 0 )
 
-[node name="Loop6" parent="." instance=ExtResource( 20 )]
-position = Vector2( 4980, 140 )
+[node name="TileMap" parent="Tower/ScrollingPipe" instance=ExtResource( 21 )]
+tile_data = PoolIntArray( 65521, 0, 65536, 131057, 0, 65536, 131061, 0, 65537, 131062, 0, 65537, 131063, 0, 1, 196590, 0, 65536, 196593, 0, 131072, 196594, 0, 65537, 196599, 0, 65536, 262135, 0, 65536, 262137, 0, 0, 262138, 0, 65537, 262139, 0, 65537, 327671, 0, 65536, 327673, 0, 65536, 393205, 0, 65537, 393206, 0, 65537, 393207, 0, 131073, 393209, 0, 65536, 458745, 0, 65536, 524266, 0, 0, 524267, 0, 65537, 524268, 0, 65537, 524269, 0, 65537, 524270, 0, 65537, 524271, 0, 65537, 524272, 0, 65537, 524273, 0, 65537, 524274, 0, 1, 524281, 0, 131072, 524282, 0, 65537, 524283, 0, 65537, 589802, 0, 65536, 589810, 0, 65536, 655338, 0, 65536, 655346, 0, 65536, 720872, 0, 65536, 720874, 0, 65536, 720875, 0, 0, 720876, 0, 65537, 720877, 0, 65537, 720878, 0, 65537, 720879, 0, 65537, 720882, 0, 65536, 786408, 0, 65536, 786410, 0, 65536, 786411, 0, 65536, 786418, 0, 65536, 851944, 0, 65536, 851946, 0, 65536, 851947, 0, 65536, 851954, 0, 65536, 917478, 0, 0, 917479, 0, 65537, 917480, 0, 131073, 917482, 0, 65536, 917483, 0, 65536, 917484, 0, 0, 917485, 0, 65537, 917488, 0, 65537, 917489, 0, 65537, 917490, 0, 131073, 983014, 0, 65536, 983018, 0, 65536, 983019, 0, 65536, 983020, 0, 65536, 983031, 0, 0, 983032, 0, 1, 1048547, 0, 0, 1048548, 0, 1, 1048550, 0, 65536, 1048554, 0, 65536, 1048555, 0, 65536, 1048556, 0, 65536, 1048567, 0, 65536, 1048568, 0, 65536, 1114084, 0, 65536, 1114086, 0, 65536, 1114090, 0, 65536, 1114091, 0, 65536, 1114092, 0, 131072, 1114093, 0, 65537, 1114094, 0, 65537, 1114095, 0, 65537, 1114096, 0, 65537, 1114097, 0, 65537, 1114098, 0, 65537, 1114099, 0, 65537, 1114100, 0, 65537, 1114101, 0, 65537, 1114102, 0, 65537, 1114103, 0, 131073, 1114104, 0, 65536 )
+
+[node name="CrossLoop" parent="Tower" instance=ExtResource( 6 )]
+position = Vector2( 480, 360 )
+
+[node name="Loop" parent="Tower" instance=ExtResource( 20 )]
+position = Vector2( 520, 480 )
+
+[node name="Loop2" parent="Tower" instance=ExtResource( 20 )]
+position = Vector2( 600, 480 )
+
+[node name="Loop3" parent="Tower" instance=ExtResource( 20 )]
+position = Vector2( 680, 480 )
+
+[node name="CrossLoop2" parent="Tower" instance=ExtResource( 6 )]
+position = Vector2( 580, 360 )
+
+[node name="CrossLoop3" parent="Tower" instance=ExtResource( 6 )]
+position = Vector2( 680, 360 )
+
+[node name="GameButtonChain" parent="Tower" instance=ExtResource( 27 )]
+position = Vector2( 540, 100 )
+
+[node name="GameButton" parent="Tower/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( -20, -40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton2" parent="Tower/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( 20, -40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton3" parent="Tower/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( 40, 0 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton4" parent="Tower/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( 20, 40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton5" parent="Tower/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( -20, 40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton6" parent="Tower/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( -40, 0 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GhostGroup" parent="Tower" instance=ExtResource( 17 )]
+position = Vector2( 600, 540 )
+
+[node name="GhostBlock" parent="Tower/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -20, 0 )
+
+[node name="GhostBlock2" parent="Tower/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 20, 0 )
+
+[node name="GhostBlock3" parent="Tower/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 260, -360 )
+
+[node name="GhostBlock4" parent="Tower/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 260, -400 )
+
+[node name="GhostBlock5" parent="Tower/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 260, -440 )
+
+[node name="GhostBlock6" parent="Tower/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 300, -440 )
+
+[node name="GhostBlock7" parent="Tower/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 300, -400 )
+
+[node name="GhostBlock8" parent="Tower/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 300, -360 )
+
+[node name="GhostGroup2" parent="Tower" instance=ExtResource( 17 )]
+position = Vector2( 680, 420 )
+
+[node name="GhostBlock" parent="Tower/GhostGroup2" instance=ExtResource( 24 )]
+position = Vector2( -20, 0 )
+
+[node name="GhostBlock2" parent="Tower/GhostGroup2" instance=ExtResource( 24 )]
+position = Vector2( 20, 0 )
+
+[node name="CrossLoop4" parent="Tower" instance=ExtResource( 6 )]
+position = Vector2( 1080, 220 )
+
+[node name="MaxLevel1" type="Node2D" parent="."]
+position = Vector2( 8960, 0 )
+
+[node name="ScrollingPipe" parent="MaxLevel1" instance=ExtResource( 23 )]
+position = Vector2( 1280, 0 )
+
+[node name="TileMap" parent="MaxLevel1/ScrollingPipe" instance=ExtResource( 21 )]
+tile_data = PoolIntArray( 655331, 0, 0, 655332, 0, 65537, 655333, 0, 65537, 655334, 0, 65537, 655335, 0, 65537, 655336, 0, 65537, 655337, 0, 1, 720867, 0, 65536, 720873, 0, 65536, 786407, 0, 65536, 786409, 0, 65536, 851943, 0, 65536, 851945, 0, 65536, 917474, 0, 0, 917475, 0, 65537, 917476, 0, 65537, 917477, 0, 65537, 917478, 0, 65537, 917479, 0, 131073, 917481, 0, 65536, 983010, 0, 65536, 983017, 0, 65536, 983018, 0, 65537, 983019, 0, 65537, 983020, 0, 65537, 983021, 0, 65537, 983022, 0, 65537, 983023, 0, 65537, 983024, 0, 65537, 1048546, 0, 65536, 1048548, 0, 65537, 1048549, 0, 65537, 1048550, 0, 65537, 1048551, 0, 65537, 1048552, 0, 65537, 1048553, 0, 131073, 1114082, 0, 65536 )
+
+[node name="Node2D" type="Node2D" parent="MaxLevel1"]
+position = Vector2( 660, 60 )
+
+[node name="GameButton" parent="MaxLevel1/Node2D" instance=ExtResource( 28 )]
+position = Vector2( -200, 0 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Laser" parent="MaxLevel1/Node2D" instance=ExtResource( 29 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D2" type="Node2D" parent="MaxLevel1"]
+position = Vector2( 620, 60 )
+
+[node name="GameButton" parent="MaxLevel1/Node2D2" instance=ExtResource( 28 )]
+position = Vector2( -40, 0 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Laser" parent="MaxLevel1/Node2D2" instance=ExtResource( 29 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D3" type="Node2D" parent="MaxLevel1"]
+position = Vector2( 580, 60 )
+
+[node name="GameButton" parent="MaxLevel1/Node2D3" instance=ExtResource( 28 )]
+position = Vector2( 40, 0 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Laser" parent="MaxLevel1/Node2D3" instance=ExtResource( 29 )]
+position = Vector2( 0, 100 )
+
+[node name="Loops" type="Node2D" parent="MaxLevel1"]
+position = Vector2( 240, 300 )
+
+[node name="Loop31" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 760, 160 )
+
+[node name="Loop32" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 960, 240 )
+
+[node name="Loop40" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 600, 240 )
+
+[node name="Loop33" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 840, 180 )
+
+[node name="Loop34" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 920, 220 )
+
+[node name="Loop35" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 680, 200 )
+
+[node name="Loop36" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 880, 200 )
+
+[node name="Loop37" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 800, 160 )
+
+[node name="Loop38" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 720, 180 )
+
+[node name="Loop39" parent="MaxLevel1/Loops" instance=ExtResource( 20 )]
+position = Vector2( 640, 220 )
+
+[node name="Node2D4" type="Node2D" parent="MaxLevel1"]
+position = Vector2( 540, 60 )
+
+[node name="GameButton" parent="MaxLevel1/Node2D4" instance=ExtResource( 28 )]
+position = Vector2( 160, 0 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="Laser" parent="MaxLevel1/Node2D4" instance=ExtResource( 29 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D5" type="Node2D" parent="MaxLevel1"]
+position = Vector2( 500, 60 )
+
+[node name="GameButton" parent="MaxLevel1/Node2D5" instance=ExtResource( 28 )]
+position = Vector2( 40, 0 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Laser" parent="MaxLevel1/Node2D5" instance=ExtResource( 29 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D6" type="Node2D" parent="MaxLevel1"]
+position = Vector2( 460, 60 )
+
+[node name="GameButton" parent="MaxLevel1/Node2D6" instance=ExtResource( 28 )]
+position = Vector2( -40, 0 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Laser" parent="MaxLevel1/Node2D6" instance=ExtResource( 29 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D7" type="Node2D" parent="MaxLevel1"]
+position = Vector2( 420, 60 )
+
+[node name="GameButton" parent="MaxLevel1/Node2D7" instance=ExtResource( 28 )]
+position = Vector2( 80, 0 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Laser" parent="MaxLevel1/Node2D7" instance=ExtResource( 29 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D8" type="Node2D" parent="MaxLevel1"]
+position = Vector2( 700, 60 )
+
+[node name="GameButton" parent="MaxLevel1/Node2D8" instance=ExtResource( 28 )]
+position = Vector2( -40, 0 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Laser" parent="MaxLevel1/Node2D8" instance=ExtResource( 29 )]
+position = Vector2( 0, 100 )
+
+[node name="Buzzsaw" parent="MaxLevel1" instance=ExtResource( 18 )]
+position = Vector2( 80, 360 )
+
+[node name="Buzzsaw2" parent="MaxLevel1" instance=ExtResource( 18 )]
+position = Vector2( 80, 280 )
+
+[node name="Buzzsaw3" parent="MaxLevel1" instance=ExtResource( 18 )]
+position = Vector2( 80, 200 )
+
+[node name="Buzzsaw4" parent="MaxLevel1" instance=ExtResource( 18 )]
+position = Vector2( 80, 120 )
+
+[node name="Buzzsaw5" parent="MaxLevel1" instance=ExtResource( 18 )]
+position = Vector2( 80, 40 )
+
+[node name="Background" parent="MaxLevel1" instance=ExtResource( 13 )]
+texture = ExtResource( 26 )
+
+[node name="Press" parent="MaxLevel1" instance=ExtResource( 16 )]
+position = Vector2( 800, 0 )
+
+[node name="Press2" parent="MaxLevel1" instance=ExtResource( 16 )]
+position = Vector2( 880, 0 )
+subbeat_offset = 2
+
+[node name="Press3" parent="MaxLevel1" instance=ExtResource( 16 )]
+position = Vector2( 960, 0 )
+subbeat_offset = 4
+
+[node name="Press4" parent="MaxLevel1" instance=ExtResource( 16 )]
+position = Vector2( 1040, 0 )
+subbeat_offset = 6
+
+[node name="Press5" parent="MaxLevel1" instance=ExtResource( 16 )]
+position = Vector2( 1120, 0 )
+subbeat_offset = 8
+
+[node name="Press6" parent="MaxLevel1" instance=ExtResource( 16 )]
+position = Vector2( 1200, 0 )
+subbeat_offset = 10
+
+[node name="CrossLoop" parent="MaxLevel1" instance=ExtResource( 6 )]
+position = Vector2( 220, 320 )
+
+[node name="CrossLoop2" parent="MaxLevel1" instance=ExtResource( 6 )]
+position = Vector2( 320, 320 )
+
+[node name="Bridge" parent="." instance=ExtResource( 30 )]
+position = Vector2( 6400, 0 )
+
+[node name="MaxLevel2" parent="." instance=ExtResource( 31 )]
+position = Vector2( 10240, 0 )
+
+[node name="Safe" type="Node2D" parent="."]
+position = Vector2( 11520, 0 )
+
+[node name="Background" parent="Safe" instance=ExtResource( 13 )]
+
+[node name="ScrollingBlock" parent="Safe" instance=ExtResource( 12 )]
+position = Vector2( 460, 520 )
+
+[node name="ScrollingBlock2" parent="Safe" instance=ExtResource( 12 )]
+position = Vector2( 500, 520 )
+
+[node name="ScrollingBlock3" parent="Safe" instance=ExtResource( 12 )]
+position = Vector2( 540, 520 )
+
+[node name="ScrollingBlock4" parent="Safe" instance=ExtResource( 12 )]
+position = Vector2( 580, 520 )
+
+[node name="ScrollingBlock5" parent="Safe" instance=ExtResource( 12 )]
+position = Vector2( 620, 520 )
+
+[node name="ScrollingBlock6" parent="Safe" instance=ExtResource( 12 )]
+position = Vector2( 660, 520 )
+
+[node name="ScrollingBlock7" parent="Safe" instance=ExtResource( 12 )]
+position = Vector2( 700, 520 )
+
+[node name="ScrollingBlock8" parent="Safe" instance=ExtResource( 12 )]
+position = Vector2( 740, 520 )
+
+[node name="ScrollingBlock9" parent="Safe" instance=ExtResource( 12 )]
+position = Vector2( 780, 520 )
+
+[node name="GameButtonChain" parent="Safe" instance=ExtResource( 27 )]
+position = Vector2( 620, 480 )
+
+[node name="GameButton" parent="Safe/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( -80, -200 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton2" parent="Safe/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( 0, -120 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton3" parent="Safe/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( 80, -40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton4" parent="Safe/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( 80, -120 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton5" parent="Safe/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( -80, -40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton6" parent="Safe/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( 0, -200 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton7" parent="Safe/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( -80, -120 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton8" parent="Safe/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( 80, -200 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton9" parent="Safe/GameButtonChain" instance=ExtResource( 28 )]
+position = Vector2( 0, -40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GhostGroup" parent="Safe" instance=ExtResource( 17 )]
+position = Vector2( 620, 480 )
+
+[node name="GhostBlock" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -160, 0 )
+
+[node name="GhostBlock2" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -160, -40 )
+
+[node name="GhostBlock3" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -160, -80 )
+
+[node name="GhostBlock4" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -160, -120 )
+
+[node name="GhostBlock5" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -160, -160 )
+
+[node name="GhostBlock6" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -160, -200 )
+
+[node name="GhostBlock7" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -160, -240 )
+
+[node name="GhostBlock8" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -160, -280 )
+
+[node name="GhostBlock9" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -120, -280 )
+
+[node name="GhostBlock10" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -80, -280 )
+
+[node name="GhostBlock11" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( -40, -280 )
+
+[node name="GhostBlock12" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 0, -280 )
+
+[node name="GhostBlock13" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 40, -280 )
+
+[node name="GhostBlock14" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 80, -280 )
+
+[node name="GhostBlock15" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 120, -280 )
+
+[node name="GhostBlock16" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 160, -280 )
+
+[node name="GhostBlock17" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 160, -240 )
+
+[node name="GhostBlock18" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 160, -200 )
+
+[node name="GhostBlock19" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 160, -160 )
+
+[node name="GhostBlock20" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 160, -120 )
+
+[node name="GhostBlock21" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 160, -80 )
+
+[node name="GhostBlock22" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 160, -40 )
+
+[node name="GhostBlock23" parent="Safe/GhostGroup" instance=ExtResource( 24 )]
+position = Vector2( 160, 0 )
+
+[node name="Loops" type="Node2D" parent="Safe"]
+
+[node name="Loop" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 500, 480 )
+
+[node name="Loop2" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 580, 480 )
+
+[node name="Loop3" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 660, 480 )
+
+[node name="Loop4" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 740, 480 )
+
+[node name="Loop5" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 740, 400 )
+
+[node name="Loop6" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 660, 400 )
+
+[node name="Loop7" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 580, 400 )
+
+[node name="Loop8" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 500, 400 )
+
+[node name="Loop9" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 740, 320 )
+
+[node name="Loop10" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 660, 320 )
+
+[node name="Loop11" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 580, 320 )
+
+[node name="Loop12" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 500, 320 )
+
+[node name="Loop13" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 740, 240 )
+
+[node name="Loop14" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 660, 240 )
+
+[node name="Loop15" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 580, 240 )
+
+[node name="Loop16" parent="Safe/Loops" instance=ExtResource( 20 )]
+position = Vector2( 500, 240 )
+
+[node name="Background" parent="." instance=ExtResource( 13 )]
+position = Vector2( 13440, 360 )
 [connection signal="loop_collected" from="Player" to="LoopCountPanel" method="_on_Player_loop_collected"]
+[connection signal="body_entered" from="Intro/WinDoor" to="Player" method="_on_WinDoor_body_entered"]
 [connection signal="clicked" from="BuzzsawChoice/CBSpeedChangeButton" to="BuzzsawChoice/GhostGroup" method="toggle"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton" to="LongJump/GhostGroup" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton" to="LongJump/GhostGroup/CBSpeedChangeButton" method="_on_GameButton_clicked"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton2" to="LongJump/GhostGroup" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton2" to="LongJump/GhostGroup/CBSpeedChangeButton2" method="_on_GameButton_clicked"]
-[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton3" to="LongJump/GhostGroup" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton3" to="LongJump/GhostGroup/CBSpeedChangeButton3" method="_on_GameButton_clicked"]
-[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="BuzzsawChoice/GhostGroup2" method="activate"]
+[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton3" to="LongJump/GhostGroup" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="LongJump/GhostGroup2" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="LongJump/GhostGroup2/CBSpeedChangeButton" method="_on_GameButton_clicked"]
-[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="BuzzsawChoice/GhostGroup2" method="activate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="BuzzsawChoice/GhostGroup2" method="activate"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="LongJump/GhostGroup2" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="BuzzsawChoice/GhostGroup2" method="activate"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="LongJump/GhostGroup2/CBSpeedChangeButton2" method="_on_GameButton_clicked"]
-[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="BuzzsawChoice/GhostGroup2" method="activate"]
-[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="LongJump/GhostGroup2" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="LongJump/GhostGroup2/CBSpeedChangeButton3" method="_on_GameButton_clicked"]
-[connection signal="body_entered" from="WinDoor" to="Player" method="_on_WinDoor_body_entered"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="LongJump/GhostGroup2" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="BuzzsawChoice/GhostGroup2" method="activate"]
+[connection signal="clicked" from="Tower/GameButtonChain/GameButton6" to="Tower/GhostGroup" method="deactivate"]
+[connection signal="clicked" from="MaxLevel1/Node2D/GameButton" to="MaxLevel1/Node2D/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D/GameButton" to="MaxLevel1/Node2D/Laser" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D2/GameButton" to="MaxLevel1/Node2D2/Laser" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D2/GameButton" to="MaxLevel1/Node2D2/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D3/GameButton" to="MaxLevel1/Node2D3/Laser" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D3/GameButton" to="MaxLevel1/Node2D3/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D4/GameButton" to="Tower/GhostGroup2" method="deactivate"]
+[connection signal="clicked" from="MaxLevel1/Node2D4/GameButton" to="MaxLevel1/Node2D4/Laser" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D4/GameButton" to="MaxLevel1/Node2D4/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D5/GameButton" to="MaxLevel1/Node2D5/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D5/GameButton" to="MaxLevel1/Node2D5/Laser" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D6/GameButton" to="MaxLevel1/Node2D6/Laser" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D6/GameButton" to="MaxLevel1/Node2D6/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D7/GameButton" to="MaxLevel1/Node2D7/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D7/GameButton" to="MaxLevel1/Node2D7/Laser" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D8/GameButton" to="MaxLevel1/Node2D8/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D8/GameButton" to="MaxLevel1/Node2D8/Laser" method="toggle"]
+[connection signal="clicked" from="Safe/GameButtonChain/GameButton9" to="Intro/GhostGroup" method="deactivate"]
+[connection signal="clicked" from="Safe/GameButtonChain/GameButton9" to="Safe/GhostGroup" method="deactivate"]

@@ -20,7 +20,7 @@ tile_data = PoolIntArray( -393205, 0, 0, -393204, 0, 65537, -393200, 0, 65537, -
 
 [node name="CBSpeedChangeButton" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1260, 660 )
-color = Color( 0, 1, 0, 1 )
+color = Color( 0, 1, 0.376471, 1 )
 icon = ExtResource( 4 )
 change = 100.0
 
