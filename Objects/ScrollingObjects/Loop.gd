@@ -15,6 +15,7 @@ func _ready():
 func _on_Loop_body_entered(body):
 	emit_signal("picked_up")
 	body.loops_collected += 1
+	body.get_node("Donut").self_modulate = $Sprite.self_modulate
 	$AnimationPlayer.play("pop fade out")
 	
 	

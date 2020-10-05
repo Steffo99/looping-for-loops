@@ -2,6 +2,9 @@ extends KinematicBody2D
 class_name Player
 
 
+var rng = RandomNumberGenerator.new()
+
+
 export(Vector2) var gravity: Vector2 = Vector2(0, 10)
 export(float) var move_speed: float = 300
 export(float) var jump_speed: float = 425
@@ -23,6 +26,9 @@ func get_floor():
 			continue
 		return collision.collider
 
+
+func _ready():
+	$Donut.self_modulate = Color.from_hsv(rng.randf_range(0.0, 1.0), 0.4, 1)
 
 func up_normal():
 	return -gravity.normalized()
