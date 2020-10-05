@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Fonts/LiberationMono-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/victory.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 120
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Label
+
+func _ready():
+	text = GLOBAL.loops_collected
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -700.0
+margin_right = 700.0
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 760.0
+margin_top = 120.0
+margin_right = 1200.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 1 )
+text = "You collected"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 760.0
+margin_top = 360.0
+margin_right = 1200.0
+margin_bottom = 440.0
+custom_fonts/font = SubResource( 1 )
+text = "lööps!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 760.0
+margin_top = 200.0
+margin_right = 1200.0
+margin_bottom = 360.0
+custom_fonts/font = SubResource( 2 )
+text = "999"
+align = 1
+valign = 1
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

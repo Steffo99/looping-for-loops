@@ -36,9 +36,11 @@ position = Vector2( -700, 420 )
 
 [node name="GameButton" parent="GhostGroup2" instance=ExtResource( 5 )]
 position = Vector2( 480, 160 )
+color = Color( 1, 0.490196, 0, 1 )
 
 [node name="GameButton2" parent="GhostGroup2" instance=ExtResource( 5 )]
 position = Vector2( 560, 160 )
+color = Color( 1, 0.490196, 0, 1 )
 is_active = false
 
 [node name="GhostBlock" parent="GhostGroup2" instance=ExtResource( 11 )]
@@ -125,5 +127,5 @@ position = Vector2( -180, 660 )
 position = Vector2( -500, 360 )
 [connection signal="clicked" from="GhostGroup2/GameButton" to="GhostGroup2/GameButton" method="deactivate"]
 [connection signal="clicked" from="GhostGroup2/GameButton" to="GhostGroup2" method="toggle"]
-[connection signal="clicked" from="GhostGroup2/GameButton2" to="GhostGroup2" method="toggle"]
 [connection signal="clicked" from="GhostGroup2/GameButton2" to="GhostGroup2/GameButton2" method="deactivate"]
+[connection signal="clicked" from="GhostGroup2/GameButton2" to="GhostGroup2" method="toggle"]

@@ -129,10 +129,15 @@ func _physics_process(_delta):
 func win():
 	print("YOU WIN!")
 	print("You collected %s loops." % loops_collected)
+	$FadeTo/AnimationPlayer.play("FadeToWhite")
 
 func die():
 	print("YOU DIED")
 	print("You collected %s loops." % loops_collected)
+	$Body.visible = false
+	$Donut.visible = false
+	$Legs.visible = false
+	$FadeTo/AnimationPlayer.play("FadeToBlack")
 
 
 func _on_WinDoor_body_entered(body):
@@ -141,3 +146,11 @@ func _on_WinDoor_body_entered(body):
 
 func _on_Area2D_body_entered(body):
 	die()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	GLOBAL.loops_collected = loops_collected
+	if anim_name == "FadeToWhite":
+		get_tree().change_scene("res://Objects/Win.tscn")
+	elif anim_name == "FadeToBlack":
+		get_tree().change_scene("res://Objects/Lose.tscn")

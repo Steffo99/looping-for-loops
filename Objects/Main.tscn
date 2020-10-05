@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Objects/SpecialObjects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/SpecialObjects/Conductor.tscn" type="PackedScene" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://Objects/Levels/Bridge.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Objects/Levels/max_level_2.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Music/RetroFuture Clean.ogg" type="AudioStream" id=32]
+[ext_resource path="res://Objects/Levels/max_level_3.tscn" type="PackedScene" id=33]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 0.294118 )
@@ -49,7 +50,7 @@ __meta__ = {
 song_bpm = 60.0
 
 [node name="Wrapper" parent="." instance=ExtResource( 5 )]
-position = Vector2( 14080, 0 )
+position = Vector2( 15360, 0 )
 
 [node name="LoopCountPanel" parent="." instance=ExtResource( 8 )]
 margin_left = 120.0
@@ -624,7 +625,7 @@ position = Vector2( 6400, 0 )
 position = Vector2( 10240, 0 )
 
 [node name="Safe" type="Node2D" parent="."]
-position = Vector2( 11520, 0 )
+position = Vector2( 12800, 0 )
 
 [node name="Background" parent="Safe" instance=ExtResource( 13 )]
 
@@ -816,8 +817,11 @@ position = Vector2( 580, 240 )
 [node name="Loop16" parent="Safe/Loops" instance=ExtResource( 20 )]
 position = Vector2( 500, 240 )
 
+[node name="Node2D" parent="." instance=ExtResource( 33 )]
+position = Vector2( 11520, 0 )
+
 [node name="Background" parent="." instance=ExtResource( 13 )]
-position = Vector2( 13440, 360 )
+position = Vector2( 14720, 360 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 32 )
@@ -826,38 +830,38 @@ autoplay = true
 [connection signal="loop_collected" from="Player" to="LoopCountPanel" method="_on_Player_loop_collected"]
 [connection signal="body_entered" from="Intro/WinDoor" to="Player" method="_on_WinDoor_body_entered"]
 [connection signal="clicked" from="BuzzsawChoice/CBSpeedChangeButton" to="BuzzsawChoice/GhostGroup" method="toggle"]
-[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton" to="LongJump/GhostGroup" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton" to="LongJump/GhostGroup/CBSpeedChangeButton" method="_on_GameButton_clicked"]
+[connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton" to="LongJump/GhostGroup" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton2" to="LongJump/GhostGroup" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton2" to="LongJump/GhostGroup/CBSpeedChangeButton2" method="_on_GameButton_clicked"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton3" to="LongJump/GhostGroup/CBSpeedChangeButton3" method="_on_GameButton_clicked"]
 [connection signal="clicked" from="LongJump/GhostGroup/CBSpeedChangeButton3" to="LongJump/GhostGroup" method="deactivate"]
-[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="LongJump/GhostGroup2" method="deactivate"]
-[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="LongJump/GhostGroup2/CBSpeedChangeButton" method="_on_GameButton_clicked"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="BuzzsawChoice/GhostGroup2" method="activate"]
-[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="LongJump/GhostGroup2" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="LongJump/GhostGroup2/CBSpeedChangeButton" method="_on_GameButton_clicked"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton" to="LongJump/GhostGroup2" method="deactivate"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="BuzzsawChoice/GhostGroup2" method="activate"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="LongJump/GhostGroup2/CBSpeedChangeButton2" method="_on_GameButton_clicked"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton2" to="LongJump/GhostGroup2" method="deactivate"]
+[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="BuzzsawChoice/GhostGroup2" method="activate"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="LongJump/GhostGroup2/CBSpeedChangeButton3" method="_on_GameButton_clicked"]
 [connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="LongJump/GhostGroup2" method="deactivate"]
-[connection signal="clicked" from="LongJump/GhostGroup2/CBSpeedChangeButton3" to="BuzzsawChoice/GhostGroup2" method="activate"]
 [connection signal="clicked" from="Tower/GameButtonChain/GameButton6" to="Tower/GhostGroup" method="deactivate"]
-[connection signal="clicked" from="MaxLevel1/Node2D/GameButton" to="MaxLevel1/Node2D/GameButton" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D/GameButton" to="MaxLevel1/Node2D/Laser" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D/GameButton" to="MaxLevel1/Node2D/GameButton" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D2/GameButton" to="MaxLevel1/Node2D2/Laser" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D2/GameButton" to="MaxLevel1/Node2D2/GameButton" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D3/GameButton" to="MaxLevel1/Node2D3/Laser" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D3/GameButton" to="MaxLevel1/Node2D3/GameButton" method="toggle"]
-[connection signal="clicked" from="MaxLevel1/Node2D4/GameButton" to="Tower/GhostGroup2" method="deactivate"]
 [connection signal="clicked" from="MaxLevel1/Node2D4/GameButton" to="MaxLevel1/Node2D4/Laser" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D4/GameButton" to="MaxLevel1/Node2D4/GameButton" method="toggle"]
-[connection signal="clicked" from="MaxLevel1/Node2D5/GameButton" to="MaxLevel1/Node2D5/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D4/GameButton" to="Tower/GhostGroup2" method="deactivate"]
 [connection signal="clicked" from="MaxLevel1/Node2D5/GameButton" to="MaxLevel1/Node2D5/Laser" method="toggle"]
-[connection signal="clicked" from="MaxLevel1/Node2D6/GameButton" to="MaxLevel1/Node2D6/Laser" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D5/GameButton" to="MaxLevel1/Node2D5/GameButton" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D6/GameButton" to="MaxLevel1/Node2D6/GameButton" method="toggle"]
+[connection signal="clicked" from="MaxLevel1/Node2D6/GameButton" to="MaxLevel1/Node2D6/Laser" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D7/GameButton" to="MaxLevel1/Node2D7/GameButton" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D7/GameButton" to="MaxLevel1/Node2D7/Laser" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D8/GameButton" to="MaxLevel1/Node2D8/GameButton" method="toggle"]
 [connection signal="clicked" from="MaxLevel1/Node2D8/GameButton" to="MaxLevel1/Node2D8/Laser" method="toggle"]
-[connection signal="clicked" from="Safe/GameButtonChain/GameButton9" to="Intro/GhostGroup" method="deactivate"]
 [connection signal="clicked" from="Safe/GameButtonChain/GameButton9" to="Safe/GhostGroup" method="deactivate"]
+[connection signal="clicked" from="Safe/GameButtonChain/GameButton9" to="Intro/GhostGroup" method="deactivate"]

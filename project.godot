@@ -138,6 +138,10 @@ config/name="Looping for Lööps"
 run/main_scene="res://Objects/Menu.tscn"
 config/icon="res://Sprites/clock.png"
 
+[autoload]
+
+GLOBAL="*res://Objects/GLOBAL.tscn"
+
 [debug]
 
 settings/stdout/print_fps=true
@@ -196,4 +200,4 @@ cheat_slower={
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_clear_color=Color( 0.235294, 0.2, 0.168627, 1 )
+environment/default_clear_color=Color( 0.101961, 0.0627451, 0.027451, 1 )

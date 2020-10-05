@@ -19,9 +19,6 @@ position = Vector2( 1180, 440 )
 [node name="Buzzsaw" parent="." instance=ExtResource( 3 )]
 position = Vector2( 740, 180 )
 
-[node name="Buzzsaw2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 900, 420 )
-
 [node name="Buzzsaw3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 740, 640 )
 
@@ -33,7 +30,7 @@ tile_data = PoolIntArray( 65526, 0, 65536, 131062, 0, 65536, 196591, 0, 0, 19659
 
 [node name="GameButton" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1040, 540 )
-color = Color( 1, 0, 0, 1 )
+color = Color( 1, 0.490196, 0, 1 )
 
 [node name="GhostGroup" parent="." instance=ExtResource( 5 )]
 position = Vector2( 680, 480 )

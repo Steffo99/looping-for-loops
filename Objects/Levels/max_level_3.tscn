@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Objects/ScrollingObjects/Utilities/ScrollingPipesTileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/ScrollingObjects/ScrollingPipe.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/ScrollingObjects/ScrollingLaser.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/wall-furnace.png" type="Texture" id=9]
+[ext_resource path="res://Objects/ScrollingObjects/Background.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 
@@ -46,6 +48,7 @@ tile_data = PoolIntArray( 393171, 0, 0, 393172, 0, 65537, 393173, 0, 1, 458707, 
 
 [node name="GameButton" parent="." instance=ExtResource( 4 )]
 position = Vector2( 820, 420 )
+color = Color( 1, 0.490196, 0, 1 )
 
 [node name="GhostGroup" parent="." instance=ExtResource( 5 )]
 position = Vector2( 680, 480 )
@@ -82,4 +85,7 @@ position = Vector2( 1100, 480 )
 
 [node name="Loop8" parent="Loops" instance=ExtResource( 6 )]
 position = Vector2( 820, 480 )
+
+[node name="Background" parent="." instance=ExtResource( 10 )]
+texture = ExtResource( 9 )
 [connection signal="clicked" from="GameButton" to="GhostGroup" method="toggle"]
