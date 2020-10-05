@@ -27,6 +27,49 @@ func get_floor():
 func up_normal():
 	return -gravity.normalized()
 
+func _process(delta):
+	var actual_speed = speed.y - gravity.y
+	print("Actual speed: %s" % actual_speed)
+	if Input.is_action_pressed("plr_left"):
+		if actual_speed < 0:
+			$Body.animation = "up_left"
+			$Donut.animation = "up"
+			$Legs.animation = "up_left"
+		elif actual_speed > 0:
+			$Body.animation = "down_left"
+			$Donut.animation = "down"
+			$Legs.animation = "down_left"
+		else:
+			$Body.animation = "neutral_left"
+			$Donut.animation = "neutral"
+			$Legs.animation = "neutral_left"
+	elif Input.is_action_pressed("plr_right"):
+		if actual_speed < 0:
+			$Body.animation = "up_right"
+			$Donut.animation = "up"
+			$Legs.animation = "up_right"
+		elif actual_speed > 0:
+			$Body.animation = "down_right"
+			$Donut.animation = "down"
+			$Legs.animation = "down_right"
+		else:
+			$Body.animation = "neutral_right"
+			$Donut.animation = "neutral"
+			$Legs.animation = "neutral_right"
+	else:
+		if actual_speed < 0:
+			$Body.animation = "up"
+			$Donut.animation = "up"
+			$Legs.animation = "up"
+		elif actual_speed > 0:
+			$Body.animation = "down"
+			$Donut.animation = "down"
+			$Legs.animation = "down"
+		else:
+			$Body.animation = "neutral"
+			$Donut.animation = "neutral"
+			$Legs.animation = "neutral"
+
 
 func _physics_process(_delta):
 	var up_normal = up_normal()
