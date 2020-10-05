@@ -1,4 +1,4 @@
-# ld47
+# Looping for Lööps
 Ludum Dare 47
 
 hewwo, plz leggimi senpai.
