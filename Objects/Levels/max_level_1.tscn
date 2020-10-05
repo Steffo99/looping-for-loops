@@ -1,0 +1,250 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingPipe.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingLaser.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/ScrollingObjects/Utilities/ScrollingPipesTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/ScrollingObjects/Buzzsaw.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ScrollingObjects/Press.tscn" type="PackedScene" id=7]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ScrollingPipe" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1280, 0 )
+
+[node name="TileMap" parent="ScrollingPipe" instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 655331, 0, 0, 655332, 0, 65537, 655333, 0, 65537, 655334, 0, 65537, 655335, 0, 65537, 655336, 0, 65537, 655337, 0, 1, 720867, 0, 65536, 720873, 0, 65536, 786407, 0, 65536, 786409, 0, 65536, 851943, 0, 65536, 851945, 0, 65536, 917474, 0, 0, 917475, 0, 65537, 917476, 0, 65537, 917477, 0, 65537, 917478, 0, 65537, 917479, 0, 131073, 917481, 0, 65536, 983010, 0, 65536, 983017, 0, 65536, 983018, 0, 65537, 983019, 0, 65537, 983020, 0, 65537, 983021, 0, 65537, 983022, 0, 65537, 983023, 0, 65537, 983024, 0, 65537, 1048546, 0, 65536, 1048548, 0, 65537, 1048549, 0, 65537, 1048550, 0, 65537, 1048551, 0, 65537, 1048552, 0, 65537, 1048553, 0, 131073, 1114082, 0, 65536 )
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 660, 60 )
+
+[node name="GameButton" parent="Node2D" instance=ExtResource( 2 )]
+position = Vector2( -200, 0 )
+
+[node name="Laser" parent="Node2D" instance=ExtResource( 3 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2( 620, 60 )
+
+[node name="GameButton" parent="Node2D2" instance=ExtResource( 2 )]
+position = Vector2( -40, 0 )
+
+[node name="Laser" parent="Node2D2" instance=ExtResource( 3 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D3" type="Node2D" parent="."]
+position = Vector2( 580, 60 )
+
+[node name="GameButton" parent="Node2D3" instance=ExtResource( 2 )]
+position = Vector2( 40, 0 )
+
+[node name="Laser" parent="Node2D3" instance=ExtResource( 3 )]
+position = Vector2( 0, 100 )
+
+[node name="Loops" type="Node2D" parent="."]
+position = Vector2( 240, 300 )
+
+[node name="Loop" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 0, 40 )
+
+[node name="Loop2" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 20, 20 )
+
+[node name="Loop3" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 0, 20 )
+
+[node name="Loop4" parent="Loops" instance=ExtResource( 6 )]
+
+[node name="Loop5" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 20, 0 )
+
+[node name="Loop6" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 20, 40 )
+
+[node name="Loop7" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 0, -20 )
+
+[node name="Loop8" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 20, -20 )
+
+[node name="Loop9" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 40, 40 )
+
+[node name="Loop10" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 60, 40 )
+
+[node name="Loop11" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 40, 20 )
+
+[node name="Loop12" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 60, 20 )
+
+[node name="Loop13" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 40, 0 )
+
+[node name="Loop14" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 60, 0 )
+
+[node name="Loop25" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 100, 20 )
+
+[node name="Loop28" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 100, 40 )
+
+[node name="Loop29" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 120, 40 )
+
+[node name="Loop30" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 140, 40 )
+
+[node name="Loop26" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 80, 20 )
+
+[node name="Loop27" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 80, 40 )
+
+[node name="Loop16" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -20, 40 )
+
+[node name="Loop17" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -40, 20 )
+
+[node name="Loop18" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -20, 20 )
+
+[node name="Loop19" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -40, 0 )
+
+[node name="Loop20" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -20, 0 )
+
+[node name="Loop21" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -40, -20 )
+
+[node name="Loop22" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -20, -20 )
+
+[node name="Loop23" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -20, -40 )
+
+[node name="Loop24" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -40, -40 )
+
+[node name="Loop15" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( -40, 40 )
+
+[node name="Loop31" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 760, 160 )
+
+[node name="Loop32" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 960, 240 )
+
+[node name="Loop33" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 840, 180 )
+
+[node name="Loop34" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 920, 220 )
+
+[node name="Loop35" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 680, 200 )
+
+[node name="Loop36" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 880, 200 )
+
+[node name="Loop37" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 800, 160 )
+
+[node name="Loop38" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 720, 180 )
+
+[node name="Loop39" parent="Loops" instance=ExtResource( 6 )]
+position = Vector2( 640, 220 )
+
+[node name="Node2D4" type="Node2D" parent="."]
+position = Vector2( 540, 60 )
+
+[node name="GameButton" parent="Node2D4" instance=ExtResource( 2 )]
+position = Vector2( 160, 0 )
+
+[node name="Laser" parent="Node2D4" instance=ExtResource( 3 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D5" type="Node2D" parent="."]
+position = Vector2( 500, 60 )
+
+[node name="GameButton" parent="Node2D5" instance=ExtResource( 2 )]
+position = Vector2( 40, 0 )
+
+[node name="Laser" parent="Node2D5" instance=ExtResource( 3 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D6" type="Node2D" parent="."]
+position = Vector2( 460, 60 )
+
+[node name="GameButton" parent="Node2D6" instance=ExtResource( 2 )]
+position = Vector2( -40, 0 )
+
+[node name="Laser" parent="Node2D6" instance=ExtResource( 3 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D7" type="Node2D" parent="."]
+position = Vector2( 420, 60 )
+
+[node name="GameButton" parent="Node2D7" instance=ExtResource( 2 )]
+position = Vector2( 80, 0 )
+
+[node name="Laser" parent="Node2D7" instance=ExtResource( 3 )]
+position = Vector2( 0, 100 )
+
+[node name="Node2D8" type="Node2D" parent="."]
+position = Vector2( 700, 60 )
+
+[node name="GameButton" parent="Node2D8" instance=ExtResource( 2 )]
+position = Vector2( -40, 0 )
+
+[node name="Laser" parent="Node2D8" instance=ExtResource( 3 )]
+position = Vector2( 0, 100 )
+
+[node name="Buzzsaw" parent="." instance=ExtResource( 5 )]
+position = Vector2( 100, 280 )
+
+[node name="Press" parent="." instance=ExtResource( 7 )]
+position = Vector2( 820, 0 )
+
+[node name="Press2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 900, 0 )
+subbeat_offset = 2
+
+[node name="Press3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 980, 0 )
+subbeat_offset = 4
+
+[node name="Press4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1060, 0 )
+subbeat_offset = 6
+
+[node name="Press5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1140, 0 )
+subbeat_offset = 8
+
+[node name="Press6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1220, 0 )
+subbeat_offset = 10
+[connection signal="clicked" from="Node2D/GameButton" to="Node2D/Laser" method="toggle"]
+[connection signal="clicked" from="Node2D/GameButton" to="Node2D/GameButton" method="toggle"]
+[connection signal="clicked" from="Node2D2/GameButton" to="Node2D2/Laser" method="toggle"]
+[connection signal="clicked" from="Node2D2/GameButton" to="Node2D2/GameButton" method="toggle"]
+[connection signal="clicked" from="Node2D3/GameButton" to="Node2D3/Laser" method="toggle"]
+[connection signal="clicked" from="Node2D3/GameButton" to="Node2D3/GameButton" method="toggle"]
+[connection signal="clicked" from="Node2D4/GameButton" to="Node2D4/GameButton" method="toggle"]
+[connection signal="clicked" from="Node2D4/GameButton" to="Node2D4/Laser" method="toggle"]
+[connection signal="clicked" from="Node2D5/GameButton" to="Node2D5/GameButton" method="toggle"]
+[connection signal="clicked" from="Node2D5/GameButton" to="Node2D5/Laser" method="toggle"]
+[connection signal="clicked" from="Node2D6/GameButton" to="Node2D6/GameButton" method="toggle"]
+[connection signal="clicked" from="Node2D6/GameButton" to="Node2D6/Laser" method="toggle"]
+[connection signal="clicked" from="Node2D7/GameButton" to="Node2D7/GameButton" method="toggle"]
+[connection signal="clicked" from="Node2D7/GameButton" to="Node2D7/Laser" method="toggle"]
+[connection signal="clicked" from="Node2D8/GameButton" to="Node2D8/GameButton" method="toggle"]
+[connection signal="clicked" from="Node2D8/GameButton" to="Node2D8/Laser" method="toggle"]
