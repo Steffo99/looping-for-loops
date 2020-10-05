@@ -1,0 +1,201 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostBlock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/ScrollingObjects/ScrollingBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/ScrollingObjects/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/ScrollingObjects/Ghosts/GhostGroup.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/ScrollingObjects/Loop.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButtonChain.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/ScrollingObjects/Buttons/GameButton.tscn" type="PackedScene" id=7]
+
+[node name="Safe" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="ScrollingBlock" parent="." instance=ExtResource( 2 )]
+position = Vector2( 460, 520 )
+
+[node name="ScrollingBlock2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 500, 520 )
+
+[node name="ScrollingBlock3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 540, 520 )
+
+[node name="ScrollingBlock4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 580, 520 )
+
+[node name="ScrollingBlock5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 620, 520 )
+
+[node name="ScrollingBlock6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 660, 520 )
+
+[node name="ScrollingBlock7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 700, 520 )
+
+[node name="ScrollingBlock8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 740, 520 )
+
+[node name="ScrollingBlock9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 780, 520 )
+
+[node name="GameButtonChain" parent="." instance=ExtResource( 6 )]
+position = Vector2( 620, 480 )
+
+[node name="GameButton" parent="GameButtonChain" instance=ExtResource( 7 )]
+position = Vector2( -80, -200 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton2" parent="GameButtonChain" instance=ExtResource( 7 )]
+position = Vector2( 0, -120 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton3" parent="GameButtonChain" instance=ExtResource( 7 )]
+position = Vector2( 80, -40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton4" parent="GameButtonChain" instance=ExtResource( 7 )]
+position = Vector2( 80, -120 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton5" parent="GameButtonChain" instance=ExtResource( 7 )]
+position = Vector2( -80, -40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton6" parent="GameButtonChain" instance=ExtResource( 7 )]
+position = Vector2( 0, -200 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton7" parent="GameButtonChain" instance=ExtResource( 7 )]
+position = Vector2( -80, -120 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton8" parent="GameButtonChain" instance=ExtResource( 7 )]
+position = Vector2( 80, -200 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GameButton9" parent="GameButtonChain" instance=ExtResource( 7 )]
+position = Vector2( 0, -40 )
+color = Color( 1, 0.490196, 0, 1 )
+
+[node name="GhostGroup" parent="." instance=ExtResource( 4 )]
+position = Vector2( 620, 480 )
+
+[node name="GhostBlock" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -160, 0 )
+
+[node name="GhostBlock2" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -160, -40 )
+
+[node name="GhostBlock3" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -160, -80 )
+
+[node name="GhostBlock4" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -160, -120 )
+
+[node name="GhostBlock5" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -160, -160 )
+
+[node name="GhostBlock6" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -160, -200 )
+
+[node name="GhostBlock7" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -160, -240 )
+
+[node name="GhostBlock8" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -160, -280 )
+
+[node name="GhostBlock9" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -120, -280 )
+
+[node name="GhostBlock10" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -80, -280 )
+
+[node name="GhostBlock11" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( -40, -280 )
+
+[node name="GhostBlock12" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 0, -280 )
+
+[node name="GhostBlock13" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 40, -280 )
+
+[node name="GhostBlock14" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 80, -280 )
+
+[node name="GhostBlock15" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 120, -280 )
+
+[node name="GhostBlock16" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 160, -280 )
+
+[node name="GhostBlock17" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 160, -240 )
+
+[node name="GhostBlock18" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 160, -200 )
+
+[node name="GhostBlock19" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 160, -160 )
+
+[node name="GhostBlock20" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 160, -120 )
+
+[node name="GhostBlock21" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 160, -80 )
+
+[node name="GhostBlock22" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 160, -40 )
+
+[node name="GhostBlock23" parent="GhostGroup" instance=ExtResource( 1 )]
+position = Vector2( 160, 0 )
+
+[node name="Loops" type="Node2D" parent="."]
+
+[node name="Loop" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 500, 480 )
+
+[node name="Loop2" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 580, 480 )
+
+[node name="Loop3" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 660, 480 )
+
+[node name="Loop4" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 740, 480 )
+
+[node name="Loop5" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 740, 400 )
+
+[node name="Loop6" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 660, 400 )
+
+[node name="Loop7" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 580, 400 )
+
+[node name="Loop8" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 500, 400 )
+
+[node name="Loop9" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 740, 320 )
+
+[node name="Loop10" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 660, 320 )
+
+[node name="Loop11" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 580, 320 )
+
+[node name="Loop12" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 500, 320 )
+
+[node name="Loop13" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 740, 240 )
+
+[node name="Loop14" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 660, 240 )
+
+[node name="Loop15" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 580, 240 )
+
+[node name="Loop16" parent="Loops" instance=ExtResource( 5 )]
+position = Vector2( 500, 240 )

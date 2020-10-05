@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/RetroFuture Clean.ogg-be35e77c0246647b4f1f117a192798c9.oggstr"
+
+[deps]
+
+source_file="res://Music/RetroFuture Clean.ogg"
+dest_files=[ "res://.import/RetroFuture Clean.ogg-be35e77c0246647b4f1f117a192798c9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
