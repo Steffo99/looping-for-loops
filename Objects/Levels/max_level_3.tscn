@@ -16,9 +16,6 @@
 [node name="Buzzsaw2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 660, 440 )
 
-[node name="Buzzsaw" parent="." instance=ExtResource( 3 )]
-position = Vector2( 980, 540 )
-
 [node name="ScrollingLaser" parent="." instance=ExtResource( 8 )]
 position = Vector2( 780, 320 )
 

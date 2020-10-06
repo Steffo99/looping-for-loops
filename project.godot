@@ -136,6 +136,7 @@ _global_script_class_icons={
 
 config/name="Looping for Lööps"
 run/main_scene="res://Objects/Menu.tscn"
+boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://Sprites/clock.png"
 
 [autoload]
