@@ -10,6 +10,7 @@ export(float) var jump_speed: float = 425
 export(float) var jump_buffer_msec: float = 80
 export(float) var quick_fall_gravity_multiplier: float = 4
 export(bool) var stop_jump_on_bonk: bool = true
+export(bool) var invincible: bool = false
 
 var speed: Vector2 = Vector2.ZERO
 var can_jump: bool = false
@@ -76,6 +77,15 @@ func _process(delta):
 			$Body.animation = "neutral"
 			$Donut.animation = "neutral"
 			$Legs.animation = "neutral"
+	
+	if Input.is_action_just_pressed("cheat_invincible"):
+		if invincible:
+			$Body.modulate = Color.white
+			$Legs.modulate = Color.white
+		else:
+			$Body.modulate = Color.cyan
+			$Legs.modulate = Color.cyan
+		invincible = not invincible
 
 
 func _physics_process(_delta):
@@ -128,16 +138,17 @@ func _physics_process(_delta):
 
 func win():
 	print("YOU WIN!")
-	print("You collected %s loops." % loops_collected)
+	print("You collected %d loops." % loops_collected)
 	$FadeTo/AnimationPlayer.play("FadeToWhite")
 
 func die():
 	print("YOU DIED")
-	print("You collected %s loops." % loops_collected)
-	$Body.visible = false
-	$Donut.visible = false
-	$Legs.visible = false
-	$FadeTo/AnimationPlayer.play("FadeToBlack")
+	print("You collected %d loops." % loops_collected)
+	if not invincible:
+		$Body.visible = false
+		$Donut.visible = false
+		$Legs.visible = false
+		$FadeTo/AnimationPlayer.play("FadeToBlack")
 
 
 func _on_WinDoor_body_entered(body):
