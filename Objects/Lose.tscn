@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/LiberationMono-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Objects/ScrollingObjects/PlayButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/wall-clocks.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=2]
 size = 80
@@ -11,9 +12,11 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -280, -360 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.101961, 0.0627451, 0.027451, 1 )
+position = Vector2( 640, 360 )
+texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_right = 1280.0

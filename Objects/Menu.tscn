@@ -32,7 +32,7 @@ font_data = ExtResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Wall-clocks" type="Sprite" parent="."]
+[node name="Background" type="Sprite" parent="."]
 modulate = Color( 0.101961, 0.0627451, 0.027451, 1 )
 position = Vector2( 640, 360 )
 texture = ExtResource( 11 )

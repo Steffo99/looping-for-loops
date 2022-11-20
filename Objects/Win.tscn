@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Fonts/LiberationMono-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/victory.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/wall-clocks.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -21,9 +22,11 @@ func _ready():
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.101961, 0.0627451, 0.027451, 1 )
+position = Vector2( 640, 360 )
+texture = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_top = 1.0
