@@ -325,22 +325,8 @@ color = Color( 0, 1, 0.376471, 1 )
 icon = ExtResource( 19 )
 change = 300.0
 
-[node name="Loop6" parent="LongJump" instance=ExtResource( 20 )]
-position = Vector2( 1180, 460 )
-
-[node name="Loop9" parent="LongJump" instance=ExtResource( 20 )]
-position = Vector2( 100, 460 )
-
 [node name="CrossLoop2" type="Node2D" parent="LongJump"]
 position = Vector2( 660, 280 )
-
-[node name="Loop" parent="LongJump/CrossLoop2" instance=ExtResource( 20 )]
-
-[node name="Loop2" parent="LongJump/CrossLoop2" instance=ExtResource( 20 )]
-position = Vector2( 20, 20 )
-
-[node name="Loop4" parent="LongJump/CrossLoop2" instance=ExtResource( 20 )]
-position = Vector2( -20, 20 )
 
 [node name="Loop" parent="LongJump" instance=ExtResource( 20 )]
 position = Vector2( 140, 140 )
@@ -791,23 +777,11 @@ position = Vector2( 740, 480 )
 [node name="Loop5" parent="Safe/Loops" instance=ExtResource( 20 )]
 position = Vector2( 740, 400 )
 
-[node name="Loop6" parent="Safe/Loops" instance=ExtResource( 20 )]
-position = Vector2( 660, 400 )
-
-[node name="Loop7" parent="Safe/Loops" instance=ExtResource( 20 )]
-position = Vector2( 580, 400 )
-
 [node name="Loop8" parent="Safe/Loops" instance=ExtResource( 20 )]
 position = Vector2( 500, 400 )
 
 [node name="Loop9" parent="Safe/Loops" instance=ExtResource( 20 )]
 position = Vector2( 740, 320 )
-
-[node name="Loop10" parent="Safe/Loops" instance=ExtResource( 20 )]
-position = Vector2( 660, 320 )
-
-[node name="Loop11" parent="Safe/Loops" instance=ExtResource( 20 )]
-position = Vector2( 580, 320 )
 
 [node name="Loop12" parent="Safe/Loops" instance=ExtResource( 20 )]
 position = Vector2( 500, 320 )
