@@ -35,6 +35,8 @@ Complete **platforming challenges** to collect **loops**, and get to the exit wi
 
 ### Developer Cheats
 
+- **F9** - Invincibility
+
 > Don't use these, the game **WILL** break!
 
 - **F6** - Slow down the conveyor belt
@@ -65,7 +67,13 @@ Complete **platforming challenges** to collect **loops**, and get to the exit wi
 
 ## Changelog
 
-### Bugfix 1
+### v1.2.0
+
+- Introduced invincibility cheat (which went lost for a long time somewhere in the branches of the repository)
+- Improved menu
+- Removed unobtainable loops
+
+### v1.1.0
 
 - Fix RNG not working on HTML5 (Firefox)
 - Remove one block to stop players from getting stuck
