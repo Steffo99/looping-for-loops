@@ -331,8 +331,16 @@ position = Vector2( 1180, 460 )
 [node name="Loop9" parent="LongJump" instance=ExtResource( 20 )]
 position = Vector2( 100, 460 )
 
-[node name="CrossLoop2" parent="LongJump" instance=ExtResource( 6 )]
+[node name="CrossLoop2" type="Node2D" parent="LongJump"]
 position = Vector2( 660, 280 )
+
+[node name="Loop" parent="LongJump/CrossLoop2" instance=ExtResource( 20 )]
+
+[node name="Loop2" parent="LongJump/CrossLoop2" instance=ExtResource( 20 )]
+position = Vector2( 20, 20 )
+
+[node name="Loop4" parent="LongJump/CrossLoop2" instance=ExtResource( 20 )]
+position = Vector2( -20, 20 )
 
 [node name="Loop" parent="LongJump" instance=ExtResource( 20 )]
 position = Vector2( 140, 140 )
@@ -899,6 +907,7 @@ position = Vector2( 14720, 360 )
 stream = ExtResource( 32 )
 volume_db = -11.362
 autoplay = true
+
 [connection signal="loop_collected" from="Player" to="LoopCountPanel" method="_on_Player_loop_collected"]
 [connection signal="body_entered" from="Intro/WinDoor" to="Player" method="_on_WinDoor_body_entered"]
 [connection signal="clicked" from="BuzzsawChoice/CBSpeedChangeButton" to="BuzzsawChoice/GhostGroup" method="toggle"]
