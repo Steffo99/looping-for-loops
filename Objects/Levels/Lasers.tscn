@@ -54,17 +54,11 @@ is_active = false
 [node name="Loop" parent="." instance=ExtResource( 6 )]
 position = Vector2( 280, 460 )
 
-[node name="Loop2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 320, 420 )
-
 [node name="Loop3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 360, 460 )
 
 [node name="Loop4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 480, 460 )
-
-[node name="Loop5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 520, 420 )
 
 [node name="Loop6" parent="." instance=ExtResource( 6 )]
 position = Vector2( 560, 460 )
@@ -115,6 +109,7 @@ position = Vector2( 760, 140 )
 
 [node name="ScrollingLaser4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 960, 140 )
+
 [connection signal="clicked" from="GameButton" to="ScrollingLaser" method="toggle"]
 [connection signal="clicked" from="GameButton2" to="ScrollingLaser2" method="toggle"]
 [connection signal="clicked" from="GameButton3" to="GhostGroup" method="toggle"]
