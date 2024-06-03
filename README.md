@@ -1,80 +1,21 @@
-# Looping for Lööps
+<div align="center">
 
-_A fruity looping platformer_
+![](.media/icon-128x128_round.png)
 
-## Ludum Dare 47: Jam Entry
+# Looping for lööps
 
-[![](https://img.shields.io/badge/overall-3.4-yellowgreen) 
-![](https://img.shields.io/badge/fun-3.4-yellowgreen) 
-![](https://img.shields.io/badge/innovation-3.1-yellowgreen) 
-![](https://img.shields.io/badge/theme-3.1-yellowgreen) 
-![](https://img.shields.io/badge/graphics-3.5-yellowgreen) 
-![](https://img.shields.io/badge/humor-3.4-yellowgreen)
-![](https://img.shields.io/badge/mood-3.3-yellowgreen)](https://ldjam.com/events/ludum-dare/47/$216472)
+A fruit-lööping platformer
 
-![](/Sprites/clock.png)
+</div>
 
-## About
+## Links
 
-Loopy the cat wandered to a fruity loops factory, and there he ate so much that he got stuck in a giant fruit loop!
-
-Now he wants to go back home, but the exit is on a looping conveyor belt with buttons, pistons, lasers, and buzzsaws!  
-_(Why are there death traps in a factory?)_
-
-Complete **platforming challenges** to collect **loops**, and get to the exit with the most loops possible!
-
-![](/Sprites/saw.png)
-
-## Controls
-
-- **A** / **←** - Move left
-- **D** / **→** - Move right
-- **W** / **↑** - Jump
-- **Hold W** / **Hold ↑** - Jump higher!
-- **LMB** _(Left Mouse Button)_ - Activate buttons to trigger something
-
-### Developer Cheats
-
-- **F9** - Invincibility
-
-> Don't use these, the game **WILL** break!
-
-- **F6** - Slow down the conveyor belt
-- **F7** - Speed up the conveyor belt
+[![Ludum Dare 47 Jam](https://img.shields.io/badge/ludum_dare_47-jam-%23EE5533)](https://ldjam.com/events/ludum-dare/47/$216472)
+ 
+[![Published on Itch.io](https://img.shields.io/badge/itch.io-published-%2390ce59)](https://steffo.itch.io/looping-for-loops)
 
 ## Screenshots
 
 ![](/Resources/screenshot1.png)
 
 ![](/Resources/screenshot2.png)
-
-## License info
-
-### Godot Engine
-
-[MIT License](https://github.com/godotengine/godot/blob/master/LICENSE.txt)
-
-### Music
-
-> "RetroFuture Clean", "Robobozo"  
-> Kevin MacLeod (incompetech.com)  
-> Licensed under Creative Commons: By Attribution 3.0  
-> http://creativecommons.org/licenses/by/3.0/
-
-## Inspired by
-
-> ![](/Resources/loopsmeme.jpg)
-
-## Changelog
-
-### v1.2.0
-
-- Introduced invincibility cheat (which went lost for a long time somewhere in the branches of the repository)
-- Improved menu
-- Removed unobtainable loops
-
-### v1.1.0
-
-- Fix RNG not working on HTML5 (Firefox)
-- Remove one block to stop players from getting stuck
-- Fix button not toggling itself correctly
